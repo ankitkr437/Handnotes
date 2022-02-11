@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+}
+.trending-author{
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Autour One', cursive;
+    text-align: center;
+    background-color: rgb(111, 163, 206);
+    color: rgb(74, 92, 9);
+    margin-left: 3vw;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    box-shadow: 0px 1px 3px rgb(16, 13, 22);
+    margin-top: -11vh;
+}
+.left-container{
+ display: flex;
+ flex-direction: column;
+ flex: 9;
+ margin-right:2% ;
+}
+.right-container{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    margin-left: 2%;
+    margin-right:2% ;
+}
+ 
+ 

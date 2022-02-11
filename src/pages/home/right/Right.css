@@ -1,0 +1,6 @@
+.right-container{
+    display: flex;
+    margin-left: 1%;
+    margin-bottom: 3vh;
+    background-color: cornflowerblue;
+}

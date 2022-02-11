@@ -1,0 +1,62 @@
+.sell-container-home{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    padding: 11vh 3vw;
+    margin-bottom: 12vh;
+    justify-content: center;
+}
+.sell-img-home{
+    flex:0;
+    margin-right: 1vh;
+}
+.sell-img-home img{
+   width: 10vh;
+   height: 10vh;
+   border-radius: 50%;
+   object-fit: cover;
+   border: 1px solid grey;
+   border-radius: 31px;
+}
+.sell-post-home{
+    flex: 10;
+    border: 1px solid grey;
+    border-radius: 31px;
+    padding: 1.6vh 3vw;
+    height: 4vw;
+    width: 100%;
+    background-color: #7dadfd;
+}
+.sell-post-home:hover{
+   cursor: pointer;
+}
+.sell-post-home-text:hover{
+    cursor: pointer;
+ }
+.sell-post-home p{
+    color: rgb(29, 51, 51);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+    .sell-img-home img{
+       width: 6vh;
+       height: 6vh;
+     }
+     .sell-container-home{
+        height: 6vh;
+        margin-bottom: 8vh;
+    }
+    .sell-post-home{
+        padding: 1.2vh 3vw;
+        flex: 4;
+        height: 6vh;
+        margin-right: 4vw;
+    }
+    .sell-post-home p{
+        font-size: 14px;
+    }
+    
+}
+ 

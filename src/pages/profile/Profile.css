@@ -1,0 +1,234 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+.profile-container{
+    width: 100%;
+    height: 40vh;
+    padding-top: 11vh;
+    padding-left: 4vh;
+    padding-right: 4vh;
+}
+.post-topbar-ago{
+    line-height: 2vh;
+}
+.profile-top{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(200, 217, 236);
+    box-shadow: 0px 1px 3px rgb(0, 0, 0);
+    margin-top: 2vh;
+    margin: 0 7vh;
+    margin-left: 2vh;
+    height: 15vh;
+}
+ 
+ 
+.follow{
+    box-shadow: 0px 1px 3px rgb(86, 109, 86);
+    color:rgb(7, 35, 94);  
+    background-color: rgb(133, 158, 240);
+    margin-top: 1%;
+    outline: none;
+    display: flex;
+    width:10vw;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+.follow-icon{
+    color:rgb(7, 35, 94); 
+}
+
+.profile-top-img-container {
+    display: flex;
+    flex: 0.6;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 1vh;
+}
+.profile-top-img-container img{
+    width: 13vh;
+    height: 13vh;
+    padding: 0.2vh;
+    border-radius: 50%;
+    border: 2px solid rgb(106, 150, 24);
+}
+.profile-top-followers-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.profile-top-folloeings-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+.profile-top-notes-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.number{
+    font-size: 23px;
+    font-weight: 600;
+}
+.number-below{
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(85, 69, 48);
+}
+
+
+
+
+.contribution{
+    border-top: 2px solid rgb(46, 8, 61);
+    line-height: 8vh;
+}
+.profile-contribution{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+ 
+.profile-contribution-sell-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.profile-contribution-buy-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+.profile-contribution-solve-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.profile-contribution-ask-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.contribution-number{
+    font-size: 23px;
+    font-weight: 600;
+}
+.contribution-number-below{
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(85, 69, 48);
+}
+
+.user-post{
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+  margin-right: 3vw;
+}
+.user-timeline{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: 3vh;
+}
+.user-right{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 3vw;
+    margin-right: 1vw;
+    height: 100%;
+}
+.user-desc{
+    padding: 0 4vh;
+}
+.profile-desc{
+    display: flex;
+    width: 100%;
+}
+.profile-desc-name{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+.profile-desc-publish-notes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+.profile-desc-publish-notes p{
+   font-size: 23px;
+   font-weight: 600;
+   text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    .follow{
+        font-size: 15px;
+        width: 23vw;
+        height: 4vh;
+    }
+    .profile-desc-1{
+        line-height: 3vh;
+    }
+    .profile-container{
+        padding-right: 5vh; 
+    }
+    .profile-top-img-container img{
+        width: 7vh;
+        height: 7vh; 
+    }
+    .profile-top{
+        height: 11vh;
+        border-radius: 8px;
+        width: 75vw;
+    }    
+    .number{
+        font-size: 19px;
+        
+    }
+    .number-below{
+        font-size: 10px;
+    }
+    .user-desc{
+        padding: 1vh 2vh;
+    }
+    .profile-desc-1{
+        line-height: 4vh;
+    }
+    .profile-desc-publish-notes p{
+        margin-bottom: 1vh;
+        text-align: center;
+    }
+     
+    .follow-icon .MuiSvgIcon-root{
+        color:rgb(7, 35, 94); 
+        font-size: 1rem;
+    }
+    
+}
+ 
