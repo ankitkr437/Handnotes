@@ -1,5 +1,5 @@
 
-#This cwebsite is live
+# This website is live
 
 https://handnote.netlify.app/
 
