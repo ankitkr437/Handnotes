@@ -111,8 +111,10 @@ const Posttime = ({x}) => {
                 </div>
                 <Link to={`/notes/${x._id}`} style={{ textDecoration: "none" }}>
                     <div className="main-post-img-container">
-                        <img src={x.thumbnailfilename?pf+x.thumbnailfilename:pf+"post-img-2.jpg"} className="main-post-image"></img>
-                    </div>
+                  {
+                        x.thumbnailfilename && <img src={x.thumbnailfilename && pf+x.thumbnailfilename} className="main-post-image" alt="note-thumbnail"></img>
+                  }
+                   </div>
                 </Link>
             </div>
 

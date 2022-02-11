@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import CommentBox from './CommentBox';
 import axios from 'axios';
 import {Spinner} from 'react-bootstrap';
+ 
 import {
   ArrowForward,
 } from "@material-ui/icons";
@@ -16,6 +17,7 @@ const Comment = () => {
   const [commenttext,setcommenttext] =useState();
   const [allcomment,setallcomment] =useState([]);
   const [isfetchcomment,setisfetchcomment] =useState(false);
+   
   useEffect(()=>{
     const fetchComment =async(req,res)=>{
      try{
@@ -39,7 +41,7 @@ const Comment = () => {
                 userId:user._id,
                 text:commenttext,
              });
-             window.location.reload();
+             
           } catch (err) {}
           console.log("ajjkk")
       }
