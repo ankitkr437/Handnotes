@@ -42,7 +42,7 @@ const Login = () => {
 
             <input type="password" placeholder='Password' className='input-login'  ref={password} required minLength="6"></input>
 
-            <input type="submit" placeholder="login" className='input-login' style={{ backgroundColor: " lightblue" }} disabled={isFetching} ></input>
+            <input type="submit" placeholder="login" className='input-login' style={{ backgroundColor: "#1e9ec7" }} disabled={isFetching} ></input>
 
           </form>
 
