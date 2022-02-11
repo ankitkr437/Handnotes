@@ -60,7 +60,7 @@ const SignUp = () => {
 
                     <input type="password" placeholder='Confirm Password'   className="signup-input" ref={confirmpassword} required></input>
                     
-                    <input type="submit" placeholder='Register'   className="signup-input" ></input>
+                    <input type="submit" placeholder='Register'   className="signup-input" style={{ backgroundColor: "#1e9ec7" }} disabled={isFetching}></input>
                 </form>
 
                 <div className='login-signup-query' >
