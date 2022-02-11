@@ -41,6 +41,7 @@
 .login-form{
     display: flex;
      flex-direction: column;
+     min-height: 26vh;
      width: 70%;
      padding: 2vh 2vw;
 }
