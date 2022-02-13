@@ -36,7 +36,7 @@
      right: 0;
  }
  .dot-container :hover{
-    background-color: rgb(231, 235, 243);
+    background-color: rgb(163, 189, 241);
     cursor: pointer;
     border: 1px solid black;
  }
@@ -70,7 +70,7 @@
      }
      .dot-container{
         top: 7px;
-        left: 19vh;
+        left: 16vh;
      }
      .dot-container-item {
         display: flex;
@@ -81,11 +81,11 @@
         border-radius: 10px;
         margin-bottom: 0;
         padding-left: 1px;
-        width: 25vw;
+        width: 29vw;
         align-items: center;
-        height: 13vh;
+        height: 12vh;
         justify-content: center;
         margin-top: 9vh;
-        left: 7vh;
+        left: 3vh;
     }
 }

@@ -24,6 +24,10 @@ const Login = () => {
     e.preventDefault();
     loginCall({ email: email.current.value, password: password.current.value }, dispatch);
     alert("Successfully registered");
+    if(error)
+    {
+      alert("please again login...");
+    }
   }
   return (
     <div className='login-container'>

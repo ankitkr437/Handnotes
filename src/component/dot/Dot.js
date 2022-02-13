@@ -46,7 +46,8 @@ const Dot = ({x}) => {
                </li>
            </ul>
        <div className="dot-container" onClick={ShowItem}>
-        <MoreVertRounded className="dot-container-dot-icon"/>
+       <img src="https://img.icons8.com/color/30/000000/dots-loading--v3.png"/>
+      
        </div>
       </div>
     </>;
