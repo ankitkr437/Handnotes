@@ -28,7 +28,7 @@ const Sell = () => {
   audio.src = "/music/update.wav";
   const SellFormSubmitHandler = async (e) => {
 
-     
+     alert("notes uploading started...")
     e.preventDefault();
     audio.play();
     
