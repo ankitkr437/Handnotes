@@ -39,13 +39,13 @@ audio.src = "/music/comment.wav";
    
   const CommentHandler = async(e)=>{
         e.preventDefault();
-       
+        audio.play();
         try {
            await axios.post("https://handnoteapi.herokuapp.com/api/comments/" + notesid, { 
                 userId:user._id,
                 text:commenttext,
              });
-             audio.play();
+             window.location.reload();
           } catch (err) {}
           console.log("ajjkk")
       }
