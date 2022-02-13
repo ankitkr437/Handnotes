@@ -16,12 +16,20 @@ const Dot = ({x}) => {
         DotContainerItem.current.style.display === "flex"?DotContainerItem.current.style.display = "none":DotContainerItem.current.style.display = "flex"
       }
 
+      const audio= new Audio();
+      audio.src = "/music/delete.wav";
+      const audioerror= new Audio();
+      audioerror.src = "/music/error.wav";
   const DeleteNotes= async()=>{
+    audio.play();
         try {
          await axios.delete(`https://handnoteapi.herokuapp.com/api/notes/${x._id}`,{userId:currentuser._id});
+         alert("notes deleted successfully")
          window.location.reload();
         } catch (err) {
-            console.log("unsuccess")
+          audioerror.play();
+          alert("sorry you can not delete this note")
+            console.log("unsuccess");
         }
         console.log(x,currentuser._id)
   }    

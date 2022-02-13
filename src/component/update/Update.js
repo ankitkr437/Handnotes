@@ -104,14 +104,14 @@ const Update = () => {
                 <p className="input-heading" >first name</p>
                 <input type="text" placeholder="firstname"
                 onChange={(e)=>setfirstname(e.target.value)}
-                 className="input-block" required></input>
+                 className="input-block"  ></input>
               </div>
 
               <div className="input-box">
                 <p className="input-heading">last name</p>
                 <input type="text" placeholder="lastname" 
                 onChange={(e)=>setlastname(e.target.value)}
-                className="input-block"  required></input>
+                className="input-block"  ></input>
               </div>
 
               <div className="input-box">
@@ -147,7 +147,7 @@ const Update = () => {
                 <p className="input-heading">Say about yourself</p>
                 <input type="text" placeholder="description"
                 onChange={(e)=>setdesc(e.target.value)}
-                 className="input-block"  required></input>
+                 className="input-block" ></input>
               </div>
 
               <div className="input-box">
