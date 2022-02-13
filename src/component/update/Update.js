@@ -77,7 +77,7 @@ const Update = () => {
 
             <div className="Update-profile-container-left-top">
 
-              <img src={user.profilePicture?pf+user.profilePicture:pf +"DefaultBoy.jpg"}className="Update-profile-container-left-top-img"></img>
+              <img src={user.profilePicture?pf+user.profilePicture:pf +"DefaultPic.png"}className="Update-profile-container-left-top-img"></img>
 
               <div className="Update-profile-container-left-top-user-desc">
                 <p className="Update-profile-container-left-top-name">

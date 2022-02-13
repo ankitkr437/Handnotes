@@ -100,10 +100,7 @@
     font-weight: 500;
     margin-bottom: 0;
  }
- button[type=submit] {
-    background-color: rgb(111 41 232);
-    font-size: 3.5vh;
-}
+ 
 .Update-profile-container-right-form-submit{
     height: 6vh;
     width: 95%;
@@ -116,9 +113,10 @@
 .Update-profile-container-right-form-submit:active{
    font-size: 26px;
 }
-button[type=submit] {
-   background-color: rgb(182, 147, 238);
-   font-size: 3.5vh;
+.Update-profile-container-right-form-submit{
+   background-color: #8190b5;
+   box-shadow: 0 6px 13px grey;
+   font-size: 22px;
 }
 @media only screen and (max-width: 768px) {
     .Update-profile-container{

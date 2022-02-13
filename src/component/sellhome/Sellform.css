@@ -1,5 +1,5 @@
 .sell-form-container{
-    height:75vh;
+    height:85vh;
     width: 45vw;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
     z-index: 10;
     background-color: rgb(148 176 223);
     position: fixed;
-    margin-top: 7vh;
+    margin-top: 3h;
     transform: all 1s ease .2s;
     box-shadow: 0px 1px 3px rgb(25, 37, 25);
 }
@@ -31,33 +31,40 @@
     align-items: center;
 }
 .sell-form input ,.sell-form button{
-    height: 10%;
+    height: 8vh;
     margin: 2% 0;
     width: 80%;
     border-radius: 10px;
     border: 1px solid darkcyan;
     padding: 1px 2vh;
 }
-button[type=submit] {
-    background-color: rgb(127 156 206);
-    font-size: 3.5vh;
-}
+ 
 #thumbnail-file-upload,#pdf-file-upload{
-   display: none;
+   display:flex;
+   flex-direction: column;
+   border: none;
+   font-size: 17px;
+    width: 90%;
 }
 .custom-file-upload{
-   color: darkblue;
-   font-size: 21px;
+   color:darkslategray;
+   font-size: 18px;
    height: 10%;
     margin: 2% 0;
     width: 80%;
+    line-height: 7vh;
 }
 .custom-file-upload:hover{
     cursor: pointer;
 }
+.sell-form-cut-icon {
+    height: 3vh;
+    margin: 1%;
+    width: 3vh;
+}
 @media only screen and (max-width: 768px) {
     .sell-form-container{
-        height:55vh;
+        height:62vh;
         width: 75vw;
     }
 }

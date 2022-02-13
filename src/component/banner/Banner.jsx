@@ -64,7 +64,7 @@ const Banner = () => {
         showStatus={false}
         showThumbs={false}
         autoFocus={true}
-        autoPlay={true}
+        autoPlay={false}
         infiniteLoop={true}
         transitionTime={1500}
         interval={3300}

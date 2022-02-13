@@ -23,6 +23,8 @@
     margin: 0 7vh;
     margin-left: 2vh;
     height: 19vh;
+    padding: 0 1vh;
+
 }
  
 .follow{
@@ -49,12 +51,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    padding-top: 2vh;
+     
     object-fit: cover;
 }
 .profile-top-img-container img{
-    width: 13vh;
-    height: 13vh;
+    width: 14vh;
+    height: 14vh;
     padding: 0.2vh;
     border-radius: 50%;
     border: 2px solid rgb(106, 150, 24);
@@ -210,9 +212,8 @@
         padding-right: 5vh; 
     }
     .profile-top-img-container img{
-        width: 7vh;
-        height: 7vh; 
-        
+        width: 9vh;
+        height: 9vh; 
         object-fit: cover;
     }
     .profile-top{

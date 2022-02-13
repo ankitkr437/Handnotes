@@ -34,12 +34,16 @@
     
 }
 .carousel .slide img {
-    border: 2px solid rgb(67, 94, 143); 
+    border: 2px solid rgb(67, 94, 143);      
 }
+ 
 .banner-text{
     flex: 3;
 }
- 
+.carousel .slide img {
+    width: 23vh;
+    height: 23vh;
+}
 .banner-name{
     font-weight: 600;
     font-size: 28px;
@@ -87,10 +91,12 @@
     .banner-image-container{
         flex: 3;
     }
-    .banner-image{
+    
+    .carousel .slide img {
         width: 16vh;
         height: 16vh;
     }
+     
     .banner-first{
         padding: 0 4vh;
     }

@@ -38,7 +38,11 @@
     font-size: 20px;
     font-weight: 500;
 }
-
+.sellform-submit-button {
+    background-color: #8190b5;
+    box-shadow: 0 6px 13px grey;
+    font-size: 22px;
+}
 @media only screen and (max-width: 768px) {
     .sell-img-home img{
        width: 6vh;
@@ -49,13 +53,14 @@
         margin-bottom: 8vh;
     }
     .sell-post-home{
-        padding: 1.7vh 5vw;
+        padding: 1.2vh 5vw;
         flex: 4;
         height: 6vh;
         margin-right: 4vw;
     }
     .sell-post-home p{
-        font-size: 14px;
+        font-size: 18px;
+        font-weight: 600;
     }
     
 }

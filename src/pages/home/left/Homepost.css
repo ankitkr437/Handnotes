@@ -22,10 +22,10 @@
    padding-left: 2vw;
 }
 .post-topbar-img{
-    width: 6vw;
+    width: 5vw;
     border-radius: 50%;
     object-fit: cover;
-    height: 6vw;
+    height: 5vw;
 }
 .post-topbar-name{
     line-height: 4vh;
@@ -45,8 +45,7 @@
     margin-bottom: 0;
 }
 .post-topbar-ago{
-    line-height: 2vh;
-    margin-top: 5px;
+    margin-top: 0;
 }
  
 .main-post{
@@ -202,6 +201,7 @@ padding-left: 2vw;
         height: 100%;
         width: 38vw;
     }
+     
     .post-topbar-dot-container{
         width: 0;
     }
@@ -231,6 +231,12 @@ padding-left: 2vw;
        
         font-size: 2.5rem;
         
+    }
+    .post-topbar-img {
+        width: 15vw;
+        border-radius: 50%;
+        object-fit: cover;
+        height: 15vw;
     }
      
 }

@@ -333,6 +333,13 @@ color: rgb(5, 3, 24);
  .topbar-setting{
    margin-bottom: 1vh;
  }
+ .topbar-right-Img {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
 }
   
 

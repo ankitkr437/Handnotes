@@ -52,7 +52,7 @@
  @media only screen and (max-width: 650px) {
     .dot-container-post{
         display: flex;
-        width: 35vw;
+        width: 30vw;
         position: relative;
         align-items: center;
         height: 9vh;
@@ -70,7 +70,7 @@
      }
      .dot-container{
         top: 7px;
-        left: 16vh;
+        left: 7vh;
      }
      .dot-container-item {
         display: flex;
@@ -85,7 +85,6 @@
         align-items: center;
         height: 12vh;
         justify-content: center;
-        margin-top: 9vh;
-        left: 3vh;
+        margin-top: 11vh;
     }
 }

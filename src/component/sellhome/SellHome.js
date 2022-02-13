@@ -87,11 +87,11 @@ const Sell = () => {
         </div>
  
         <div className="sell-form-container" ref={ShowForm}>
-          <CloseRounded
-            className="sell-form-cut-icon"
-            onClick={ShowFormHandler}
-          />
-          
+        <img src="https://img.icons8.com/ios-filled/50/000000/delete-sign--v2.png"
+         className="sell-form-cut-icon"
+         onClick={ShowFormHandler}
+        />
+
           <form onSubmit={SellFormSubmitHandler} className="sell-form">
             <input
               type="text"
@@ -134,7 +134,7 @@ const Sell = () => {
               accept=".pdf"
               onChange={(e)=>setnotefile(e.target.files[0])}
             ></input>
-            <button type="submit">Submit</button>
+            <button type="submit" className="sellform-submit-button">Submit</button>
           </form>
         </div>
       </div>
