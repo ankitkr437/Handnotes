@@ -30,7 +30,11 @@
     width: 23vh;
     height: 23vh;
     border-radius: 50%;
-    object-fit: cover;    
+    object-fit: cover;   
+    
+}
+.carousel .slide img {
+    border: 2px solid rgb(67, 94, 143); 
 }
 .banner-text{
     flex: 3;

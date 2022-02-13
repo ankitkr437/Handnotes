@@ -9,7 +9,7 @@ const Sell = () => {
   return <>
       <div className="sell-container">
          <div className="sell-img">
-      <img src={user.profilePicture?pf+user.profilePicture:pf+"DefaultBoy.jpg"}></img>
+      <img src={user.profilePicture?pf+user.profilePicture:pf +"DefaultBoy.jpg"}></img>
          </div>
          <div className="sell-post">
            <p>Upload a Note</p>

@@ -89,7 +89,7 @@ audio.src = "/music/follow.wav";
             <p className="number-below">followings</p>
           </div>
           <div className="profile-top-notes-container">
-            <p className="number">5</p>
+            <p className="number">0</p>
             <p className="number-below">Notes Sold</p>
           </div>
         </div>
@@ -105,30 +105,35 @@ audio.src = "/music/follow.wav";
            <p> {}</p>
         <div className="profile-desc">
          <div className="profile-desc-name">
-         <p style={{fontSize:"22px",fontWeight:"600"}}>
-            {user.username}
-          </p>
          <p className="desc">
-            {user.desc}
+            {user && user.desc}
           </p>
+         <p style={{fontSize:"22px",fontWeight:"600"}}>
+            {user && user.username}
+          </p>
+          <p className="residing-second">{user.firstname+" "+user.lastname}</p>
+         
           <p style={{fontSize:"20px",fontWeight:"300"}}>
-            {user.institution}  
+            {user && user.institution}  
           </p>
           <div className="residing">
-           <p className="residing-first"> {user.country}  </p>
-           <p className="residing-second">{user.city}</p>
+           <p className="residing-first"> {user.country +" || "}  </p>
+           <p style={{marginTop:"4px"}}>{" "+user.city}</p>
           </div>
-          <p>
-          <Link to={`/profile/update`} style={{fontSize:"25px",fontWeight:"600"}}
-           className="complete-your-profile">
-          {
-            currentuser._id==userId &&
-            "Complete Your Profile"
-          }
-
-            </Link>
-            
-          </p>
+         
+         {
+          !( user.firstname && user.lastname && user.profilePicture && user.desc &&user.country) &&
+             <p>
+             <Link to={`/profile/update`} style={{fontSize:"25px",fontWeight:"600"}}
+              className="complete-your-profile">
+             {
+               currentuser._id==userId &&
+               "Complete Your Profile"
+             }
+   
+               </Link>
+             </p>
+         }
 
          </div>
         </div>

@@ -76,7 +76,7 @@ const Posttime = ({ x }) => {
         <div className="post-container" key={x._id} style={{ marginLeft: "3vw" }}>
             <div className="post-topbar">
                 <Link to={`/profile/${x.userId}`} style={{ textDecoration: "none" }}>
-                    <img src={user.profilePicture || pf + "DefaultBoy.jpg"} className="post-topbar-img" ></img>
+                    <img src={user.profilePicture?pf+user.profilePicture:pf +"DefaultBoy.jpg"} className="post-topbar-img" ></img>
                 </Link>
                 <div>
                     <p className="post-topbar-name">{isfetchusers ? users.find(obj => obj._id === x.userId).username : user.username}</p>

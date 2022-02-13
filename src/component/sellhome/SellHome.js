@@ -77,11 +77,7 @@ const Sell = () => {
       <div className="sell-container-home">
         <div className="sell-img-home">
           <img
-            src={
-              user.profilePicture
-                ? pf + user.profilePicture
-                : pf + "DefaultBoy.jpg"
-            }
+           src={user.profilePicture?pf+user.profilePicture:pf +"DefaultBoy.jpg"}
           ></img>
         </div>
         <div className="sell-post-home" onClick={UpFormHandler}>

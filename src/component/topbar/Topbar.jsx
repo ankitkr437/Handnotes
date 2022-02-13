@@ -24,7 +24,7 @@ const Topbar = () => {
   const [placeholder, setplaceholder] = useState("..");
   const pf="https://handnoteapi.herokuapp.com/images/";
 
-  const { user } = useContext(AuthContext);
+  const { user,isFetching } = useContext(AuthContext);
  
       
    const MenuClickHandler=()=>{
@@ -37,14 +37,14 @@ const Topbar = () => {
    }
 
    const currentuser=JSON.parse(localStorage.getItem("user"))
-   
-   const navigate = useNavigate();
-
+      
+   console.log(currentuser);
   const logouthandler=()=>{
+    console.log("logout")
     localStorage.clear();
-    navigate('/register');
+    window.location.reload();
   }
-
+  console.log(currentuser);
    const searchsubmit=(e)=>{
        e.preventDefault();
        console.log("submited")
@@ -86,7 +86,7 @@ const Topbar = () => {
           </Link>
           <span className="topbar-right-cart-number" >0</span> */}
           <Link to={`/`} style={{ textDecoration: "none" }}>
-            <img src={user ? (user.profilePicture || pf + "DefaultPic.png") : pf + "DefaultPic.png"} className="topbar-right-Img" onClick={MenuClickHandler}  />
+            <img src={(user && user.profilePicture)?pf+user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-right-Img" onClick={MenuClickHandler}  />
           </Link>
         </div>
       </div>
@@ -96,7 +96,7 @@ const Topbar = () => {
        <div className="profile">
      <div className="menu-img">
      <Link to={user ? `/profile/${user._id}` : `/`} style={{ textDecoration: "none" }}>
-            <img src={user ? (user.profilePicture || pf + "DefaultPic.png") : pf + "DefaultPic.png"} className="topbar-menu-Img" />
+            <img src={(user && user.profilePicture)?pf+user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-menu-Img" />
           </Link>
      </div>
     <div className="menu-desc">
@@ -123,7 +123,7 @@ const Topbar = () => {
           <p className="profile-update-link-tag">Complete Your Profile</p>
           <img src="https://img.icons8.com/ios/30/000000/settings--v2.png" className="topbar-setting"/>
             </Link>
-        <div className="profile-update-menu" id="topbar-logout">
+        <div className="profile-update-menu" id="topbar-logout" onClick={logouthandler}>
          <p className="profile-update-link-tag">Logout</p>
          <img src="https://img.icons8.com/external-sbts2018-blue-sbts2018/38/000000/external-logout-social-media-basic-1-sbts2018-blue-sbts2018.png"
          className="topbar-setting"

@@ -38,18 +38,15 @@ const Posttime = ({x}) => {
     const [allcomment,setallcomment]=useState(0)
     const [islike, setislike] = useState(false);
     const [isbuy, setisbuy] = useState(true);
-    const [users,setusers] =useState([])
-    const [isfetchusers,setisfetchusers] =useState(false)
+    
+    const [isfetchuser,setisfetchuser] =useState(false)
+        const[postuser,setpostuser]=useState()
+        
     const navigate = useNavigate()
    useEffect(() => {
     setislike(x.likes.includes(user._id));
    }, [user._id, x.likes]);
     useEffect(()=>{
-        const fetchalluser= async()=>{
-            const res =await axios.get("https://handnoteapi.herokuapp.com/api/users/");
-            setusers(res.data)
-            setisfetchusers(true)
-        }
         const fetchComment =async(req,res)=>{
             try{
                const res = await axios.get("https://handnoteapi.herokuapp.com/api/comments/" + x._id)
@@ -60,8 +57,18 @@ const Posttime = ({x}) => {
               console.log(err);
             }
            }
+           const fetchuser =async(req,res)=>{
+            try{
+               const res = await axios.get("https://handnoteapi.herokuapp.com/api/users/" + x.userId)
+               setpostuser(res.data)
+               setisfetchuser(true)
+            }
+            catch(err){
+              console.log(err);
+            }
+           }
       fetchComment();
-     fetchalluser();
+     fetchuser();
       },[]) 
    
       const likehandler = () => {
@@ -72,19 +79,19 @@ const Posttime = ({x}) => {
         setlike(islike? like - 1 : like + 1);
         setislike(!islike);
       }; 
-    
+      
     return <>
         <div className="post-container" key={x._id} style={{ marginLeft: "3vw" }}>
             <div className="post-topbar">
                 <Link to={`/profile/${x.userId}`} style={{ textDecoration: "none" }}>
                
-                    <img  src={ user.profilePicture?pf+user.profilePicture:pf + "DefaultPic.png"} className="post-topbar-img" ></img>
+                    <img  src={isfetchuser && postuser.profilePicture?pf+postuser.profilePicture:pf + "DefaultPic.png"} className="post-topbar-img" ></img>
                 </Link>
                 <div>
-                    <p className="post-topbar-name">{isfetchusers?users.find(obj=>obj._id===x.userId).username:user.username}</p>
+                    <p className="post-topbar-name">{isfetchuser && postuser.username}</p>
                     <div className="post-topbar-name-below">
                         <p className="post-topbar-followers">
-                            {user.followers.length} Followers <span style={{ visibility: "hidden" }}>#</span>
+                            {isfetchuser && postuser.followers.length} Followers <span style={{ visibility: "hidden" }}>#</span>
                         </p>
                         <p className="post-topbar-ago">
                             {format(x.createdAt)}
