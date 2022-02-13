@@ -59,6 +59,11 @@
    border: 1px solid grey;
    padding: 3px 2vw;
 }
+
+.signup-input:active{
+     background-color: rgb(238, 236, 227);
+     font-size: 27px;
+}
  @media only screen and (max-width: 768px) {
     .signup-logo{
         flex-direction: column;

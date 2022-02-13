@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import "./Update.css";
 import { useState, useEffect } from "react";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import { CloseRounded } from "@material-ui/icons";
@@ -19,10 +20,17 @@ const Update = () => {
   const [desc, setdesc] = useState();
   const [photo, setphoto] = useState(null);
   const [password, setpassword] = useState();
-  
+  const buttonupdate  =useRef();
 
+
+  const audio= new Audio();
+  audio.src = "/music/update.wav";
+  const audioerror= new Audio();
+  audioerror.src = "/music/erroe.wav";
+  const navigate = useNavigate();
   const UpdateFormHandler = async(e) => {
     e.preventDefault();
+   
     const newUser = {
       userId: user._id,
       firstname:firstname,
@@ -42,13 +50,21 @@ const Update = () => {
       newUser.profilePicture = fileName;
       try {
         await axios.post("https://handnoteapi.herokuapp.com/api/upload", data);
-      } catch (err) {}
+        alert("successfully uploaded...")
+        navigate('/');
+      } catch (err) {
+        audioerror.play();
+      }
     }
     try{
         await axios.put(`https://handnoteapi.herokuapp.com/api/users/${user._id}`,newUser);
+        audio.play();
+        alert("successfully uploaded...")
+        navigate('/');
       }
       catch(err){
        console.log(err);
+       audioerror.play();
       }
   }
 
@@ -88,14 +104,14 @@ const Update = () => {
                 <p className="input-heading" >first name</p>
                 <input type="text" placeholder="firstname"
                 onChange={(e)=>setfirstname(e.target.value)}
-                 className="input-block"></input>
+                 className="input-block" required></input>
               </div>
 
               <div className="input-box">
                 <p className="input-heading">last name</p>
                 <input type="text" placeholder="lastname" 
                 onChange={(e)=>setlastname(e.target.value)}
-                className="input-block"></input>
+                className="input-block"  required></input>
               </div>
 
               <div className="input-box">
@@ -131,7 +147,7 @@ const Update = () => {
                 <p className="input-heading">Say about yourself</p>
                 <input type="text" placeholder="description"
                 onChange={(e)=>setdesc(e.target.value)}
-                 className="input-block"></input>
+                 className="input-block"  required></input>
               </div>
 
               <div className="input-box">
@@ -153,6 +169,7 @@ const Update = () => {
 
               <button type="submit"
                 className="Update-profile-container-right-form-submit"
+                 
               >Update-profile</button>
 
             </form>

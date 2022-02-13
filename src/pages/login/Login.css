@@ -52,6 +52,10 @@
     border: 1px solid grey;
     padding: 3px 2vw;
 }
+.input-login:active{
+    background-color: rgb(238, 236, 227);
+    font-size: 27px;
+}
 .login-signup-query{
     display: flex;
     width: 100%;

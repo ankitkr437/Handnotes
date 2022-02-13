@@ -23,9 +23,11 @@ const Profile = () => {
   const [isfetchpost,setisfetchpost]=useState(false)
   const [post,setpost] =useState([])
   const [isfollow,setisfollow]=useState(false)
-  const {user:currentuser} =useContext(AuthContext);
+  const {user:currentuser, dispatch} =useContext(AuthContext);
 
-
+   
+const audio= new Audio();
+audio.src = "/music/follow.wav";
  
  
      useEffect(()=>{
@@ -50,13 +52,16 @@ const Profile = () => {
       setisfollow(currentuser.followings.includes(user?._id))
     },[currentuser,user._id])
    const FollowHandle= async ()=>{
+     audio.play();
      try{
        if(isfollow)
        {
         await  axios.put(`https://handnoteapi.herokuapp.com/api/users/${userId}/follow`,{userId:currentuser._id});
+        dispatch({ type: "UNFOLLOW", payload: user._id });
        }
        else{
         await  axios.put(`https://handnoteapi.herokuapp.com/api/users/${userId}/unfollow`,{userId:currentuser._id});
+        dispatch({ type: "FOLLOW", payload: user._id });
        }
      }
      catch(err){
@@ -72,7 +77,9 @@ const Profile = () => {
         <div className="profile-top">
           <div className="profile-top-img-container">
             <img  src={ user.profilePicture?pf+user.profilePicture:pf + "DefaultBoy.jpg"} ></img>
+            
           </div>
+         
           <div className="profile-top-followers-container">
             <p className="number">{user.followers.length || 0}</p>
             <p className="number-below">followers</p>
@@ -98,14 +105,22 @@ const Profile = () => {
            <p> {}</p>
         <div className="profile-desc">
          <div className="profile-desc-name">
-         <p style={{fontSize:"25px",fontWeight:"600"}}>
+         <p style={{fontSize:"22px",fontWeight:"600"}}>
             {user.username}
+          </p>
+         <p className="desc">
+            {user.desc}
           </p>
           <p style={{fontSize:"20px",fontWeight:"300"}}>
             {user.institution}  
           </p>
+          <div className="residing">
+           <p className="residing-first"> {user.country}  </p>
+           <p className="residing-second">{user.city}</p>
+          </div>
           <p>
-          <Link to={`/profile/update`}>
+          <Link to={`/profile/update`} style={{fontSize:"25px",fontWeight:"600"}}
+           className="complete-your-profile">
           {
             currentuser._id==userId &&
             "Complete Your Profile"

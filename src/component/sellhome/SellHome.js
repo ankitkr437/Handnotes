@@ -24,9 +24,14 @@ const Sell = () => {
     if ((ShowForm.current.style.display = "flex"))
       ShowForm.current.style.display = "none";
   };
-
+  const audio= new Audio();
+  audio.src = "/music/update.wav";
   const SellFormSubmitHandler = async (e) => {
+
+     
     e.preventDefault();
+    audio.play();
+    
     const newNote = {
       userId: user._id,
       desc: descritpion.current.value,
@@ -42,6 +47,7 @@ const Sell = () => {
      
       try {
         await axios.post("https://handnoteapi.herokuapp.com/api/upload", data);
+       
       } catch (err) {}
     }
     if(notefile){
@@ -58,6 +64,7 @@ const Sell = () => {
     try {
       await axios.post("https://handnoteapi.herokuapp.com/api/notes", newNote);
       window.location.reload();
+      alert("successfully uploaded notes")
     } catch (err) {}
   };
 
@@ -88,24 +95,28 @@ const Sell = () => {
             className="sell-form-cut-icon"
             onClick={ShowFormHandler}
           />
+          
           <form onSubmit={SellFormSubmitHandler} className="sell-form">
             <input
               type="text"
               placeholder="Notename"
               className="sell-form-note-name"
               ref={notename}
+              required
             ></input>
             <input
               type="text"
               placeholder="Descritpion"
               className="sell-form-descritpion"
               ref={descritpion}
+              required
             ></input>
             <input
               type="number"
               placeholder="Price"
               className="sell-form-price"
               ref={price}
+              required
             ></input>
             <label for="thumbnail-file-upload" class="custom-file-upload">
              Thumbnail for notes

@@ -29,5 +29,14 @@
     margin-left: 2%;
     margin-right:2% ;
 }
+@media only screen and (max-width: 768px) {
+    .right-container{
+        display: none;
+    }
+    .left-container{
+        padding: 1vh 2vh;
+        padding-left: 0vh;
+       }
+}
  
  

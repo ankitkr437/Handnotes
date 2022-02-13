@@ -24,6 +24,11 @@ import {
     PostAddTwoTone,
 } from "@material-ui/icons";
 import { AuthContext } from "../../../context/AuthContext";
+
+
+const audio= new Audio();
+  audio.src = "/music/like.wav";
+
 const Posttime = ({x}) => {
     const { user } = useContext(AuthContext);
     const pf="https://handnoteapi.herokuapp.com/images/";
@@ -60,6 +65,7 @@ const Posttime = ({x}) => {
       },[]) 
    
       const likehandler = () => {
+          audio.play();
         try {
           axios.put("https://handnoteapi.herokuapp.com/api/notes/" + x._id + "/like", { userId: user._id });
         } catch (err) {}
@@ -71,8 +77,8 @@ const Posttime = ({x}) => {
         <div className="post-container" key={x._id} style={{ marginLeft: "3vw" }}>
             <div className="post-topbar">
                 <Link to={`/profile/${x.userId}`} style={{ textDecoration: "none" }}>
-                
-                    <img src={user.profilePicture ?pf+user.profilePicture :pf + "DefaultPic.png"} className="post-topbar-img" ></img>
+               
+                    <img  src={ user.profilePicture?pf+user.profilePicture:pf + "DefaultPic.png"} className="post-topbar-img" ></img>
                 </Link>
                 <div>
                     <p className="post-topbar-name">{isfetchusers?users.find(obj=>obj._id===x.userId).username:user.username}</p>
@@ -86,7 +92,7 @@ const Posttime = ({x}) => {
                     </div>
                 </div>
                 
-              <div className="post-topbar-dot-container">
+                <div className="post-topbar-dot-container">
                  <Dot x={x}/>
               </div>
             </div>
@@ -97,7 +103,7 @@ const Posttime = ({x}) => {
                     <p className="main-post-desc">
                         {x.desc}
                     </p>
-                    <p className="main-post-note-price">Notes Price:{x.price || 0}USD</p>
+                    <p className="main-post-note-price">Notes Price:{x.price || 0} $</p>
                     <div className="post-likes-comment">
                         <div className="main-post-likes">
                             <ThumbUpAltOutlined onClick={likehandler}/>
@@ -112,7 +118,7 @@ const Posttime = ({x}) => {
                 <Link to={`/notes/${x._id}`} style={{ textDecoration: "none" }}>
                     <div className="main-post-img-container">
                   {
-                        x.thumbnailfilename && <img src={x.thumbnailfilename && pf+x.thumbnailfilename} className="main-post-image" alt="note-thumbnail"></img>
+                      <img src={x.thumbnailfilename?pf+x.thumbnailfilename:pf+"images-notes.jpg"} className="main-post-image" alt="note-thumbnail"></img>
                   }
                    </div>
                 </Link>
@@ -121,18 +127,14 @@ const Posttime = ({x}) => {
             <div className="post-last">
             <Link to={`/viewcomment/${x._id}`} className="link-in-comment">
 
-            {/* //onSubmit={CommentHandler}  onChange={(e)=>setcomment(e.target.value)}*/}
+           
                    <form className="post-last-comment-form">
                    <input
                         className="post-last-input"
                         type="text"
                        placeholder="Add a comment"
                     ></input>
-                     {/* <label for="submit-comment"
-                      className="comment-submit-icon"> < ArrowForward
-           className="icon-arrow-comment"
-          /></label>
-                    <input type="submit" id="submit-comment" className="post-last-input-submit"></input> */}
+                     
                    </form>
                     <p className="main-post-comment"
                     >{allcomment.length} comments</p>

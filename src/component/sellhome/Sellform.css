@@ -7,7 +7,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     z-index: 10;
-    background-color: rgb(236, 236, 129);
+    background-color: rgb(148 176 223);
     position: fixed;
     margin-top: 7vh;
     transform: all 1s ease .2s;
@@ -38,9 +38,8 @@
     border: 1px solid darkcyan;
     padding: 1px 2vh;
 }
-button[type=submit]
-{
-    background-color: rgb(32, 129, 45);
+button[type=submit] {
+    background-color: rgb(127 156 206);
     font-size: 3.5vh;
 }
 #thumbnail-file-upload,#pdf-file-upload{
@@ -58,8 +57,7 @@ button[type=submit]
 }
 @media only screen and (max-width: 768px) {
     .sell-form-container{
-        height:66vh;
+        height:55vh;
         width: 75vw;
-      
     }
 }

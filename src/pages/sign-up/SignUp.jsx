@@ -7,6 +7,11 @@ import { AuthContext } from '../../context/AuthContext';
 
 const SignUp = () => {
 
+
+    const audio= new Audio();
+    audio.src = "/music/update.wav";
+    
+
     const username = useRef();
     const email = useRef();
     const password = useRef();
@@ -14,7 +19,9 @@ const SignUp = () => {
     
     const { user, isFetching, error, dispatch } = useContext(AuthContext);
     const submithandler = (e) => {
-
+        
+        alert("Sit back and relax");
+        audio.play();
         e.preventDefault();
         password.current.value == confirmpassword.current.value ?
             RegisterCall({
@@ -22,7 +29,7 @@ const SignUp = () => {
                 email: email.current.value,
                 password: password.current.value,
             }, dispatch) : alert("password is not same")
-
+            alert("Successfully registered")
     }
 
 

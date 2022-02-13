@@ -23,34 +23,55 @@ import {
     PostAddTwoTone,
 } from "@material-ui/icons";
 import { AuthContext } from "../../../context/AuthContext";
-const Posttime = ({ x}) => {
+const Posttime = ({ x }) => {
     const { user } = useContext(AuthContext);
-    const pf="https://handnoteapi.herokuapp.com/images/";
+    const pf = "https://handnoteapi.herokuapp.com/images/";
     const [like, setlike] = useState(x.likes.length);
     const [islike, setislike] = useState(false);
     const [isbuy, setisbuy] = useState(true);
-    const [users,setusers] =useState([])
-    const [isfetchusers,setisfetchusers] =useState(false)
-    
-   useEffect(() => {
-    setislike(x.likes.includes(user._id));
-   }, [user._id, x.likes]);
-    useEffect(()=>{
-        const fetchalluser= async()=>{
-            const res =await axios.get("https://handnoteapi.herokuapp.com/api/users/");
-            setusers(res.data)
-            setisfetchusers(true)
-        }
-     fetchalluser();
-      },[]) 
+    const [users, setusers] = useState([])
+    const [isfetchusers, setisfetchusers] = useState(false)
+    const [isfetchcomment, setisfetchcomment] = useState();
+    const [allcomment, setallcomment] = useState(0)
 
-      const likehandler = () => {
+    const audio= new Audio();
+    audio.src = "/music/like.wav";
+
+    useEffect(() => {
+        setislike(x.likes.includes(user._id));
+    }, [user._id, x.likes]);
+    useEffect(() => {
+        const fetchalluser = async () => {
+            const res = await axios.get("https://handnoteapi.herokuapp.com/api/users/");
+            setusers(res.data)
+            setisfetchusers(true);
+        }
+        const fetchComment = async (req, res) => {
+            try {
+                const res = await axios.get("https://handnoteapi.herokuapp.com/api/comments/" + x._id)
+                setallcomment(res.data)
+                setisfetchcomment(true);
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        fetchComment();
+        fetchalluser();
+    }, [])
+
+    const likehandler = () => {
+        audio.play();
         try {
-          axios.put("https://handnoteapi.herokuapp.com/api/notes/" + x._id + "/like", { userId: user._id });
-        } catch (err) {}
-        setlike(islike? like - 1 : like + 1);
+            axios.put("https://handnoteapi.herokuapp.com/api/notes/" + x._id + "/like", { userId: user._id });
+        } catch (err) { }
+        setlike(islike ? like - 1 : like + 1);
         setislike(!islike);
-      }; 
+    };
+
+
+
+
     return <>
         <div className="post-container" key={x._id} style={{ marginLeft: "3vw" }}>
             <div className="post-topbar">
@@ -58,7 +79,7 @@ const Posttime = ({ x}) => {
                     <img src={user.profilePicture || pf + "DefaultBoy.jpg"} className="post-topbar-img" ></img>
                 </Link>
                 <div>
-                    <p className="post-topbar-name">{isfetchusers?users.find(obj=>obj._id===x.userId).username:user.username}</p>
+                    <p className="post-topbar-name">{isfetchusers ? users.find(obj => obj._id === x.userId).username : user.username}</p>
                     <div className="post-topbar-name-below">
                         <p className="post-topbar-followers">
                             {user.followers.length} Followers <span style={{ visibility: "hidden" }}>#</span>
@@ -68,9 +89,9 @@ const Posttime = ({ x}) => {
                         </p>
                     </div>
                 </div>
-                <div className="post-topbar-dot-container">
-                 <Dot x={x}/>
-              </div>
+                {/* <div className="post-topbar-dot-container">
+                    <Dot x={x} />
+                </div> */}
             </div>
 
             <div className="main-post" style={{ height: "57vh" }}>
@@ -82,7 +103,7 @@ const Posttime = ({ x}) => {
                     <p className="main-post-note-price">Notes Price:{x.price || 0}USD</p>
                     <div className="post-likes-comment">
                         <div className="main-post-likes">
-                            <ThumbUpAltOutlined onClick={likehandler}/>
+                            <ThumbUpAltOutlined onClick={likehandler} />
 
                             <GradeOutlined />{like} likes
                         </div>
@@ -93,28 +114,30 @@ const Posttime = ({ x}) => {
                 </div>
                 <Link to={`/notes/${x._id}`} style={{ textDecoration: "none" }}>
                     <div className="main-post-img-container">
-                        <img src={x.thumbnailfilename?pf+x.thumbnailfilename:pf+"post-img-2.jpg"}  className="main-post-image"></img>
+                        <img src={x.thumbnailfilename?pf+x.thumbnailfilename:pf+"images-notes.jpg"} className="main-post-image"></img>
                     </div>
                 </Link>
             </div>
 
             <div className="post-last">
-                <div className="post-last-input-container">
-                    <input
-                        className="post-last-input"
-                        type="text"
-                        placeholder="add a commnet"
-                    ></input>
-                </div>
-                    <p className="main-post-comment">
-                    <p style={{marginRight:"4px"}}>7</p>
-                    commnets
-                    </p>
+                <Link to={`/viewcomment/${x._id}`} className="link-in-comment">
+                    <form className="post-last-comment-form">
+                        <input
+                            className="post-last-input"
+                            type="text"
+                            placeholder="Add a comment"
+                        ></input>
+
+                    </form>
+                    <p className="main-post-comment"
+                    >{allcomment.length} comments</p>
+                </Link>
             </div>
         </div>
-       
+
 
     </>;
 };
 
 export default Posttime;
+

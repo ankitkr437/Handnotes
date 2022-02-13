@@ -58,9 +58,9 @@ const Note = () => {
 
            </div>
 
-
+            
            <div className='notefile-note-image-container'>
-           <img src={noteone.thumbnailfilename?pfpdf+noteone.thumbnailfilename:pfpdf+"post-img-2.jpg"} className="notefile-note-thumbnail-image"></img>
+           <img src={noteone.thumbnailfilename?pfpdf+noteone.thumbnailfilename:pfpdf+"images-notes.jpg"} className="notefile-note-thumbnail-image"></img>
            </div>
          </div>
 

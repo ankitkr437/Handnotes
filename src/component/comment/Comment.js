@@ -12,6 +12,10 @@ import {
 import { AuthContext } from '../../context/AuthContext';
 const Comment = () => {
 
+
+  
+const audio= new Audio();
+audio.src = "/music/comment.wav";
   const {user}=useContext(AuthContext);
   const {notesid}=useParams();
   const [commenttext,setcommenttext] =useState();
@@ -41,7 +45,7 @@ const Comment = () => {
                 userId:user._id,
                 text:commenttext,
              });
-             
+             audio.play();
           } catch (err) {}
           console.log("ajjkk")
       }

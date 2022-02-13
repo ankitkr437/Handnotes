@@ -26,6 +26,7 @@
     border-radius: 50%;
     object-fit: cover;
     height: 6vw;
+    border: 1px solid rgb(18, 103, 124);
 }
 .post-topbar-name{
     line-height: 4vh;

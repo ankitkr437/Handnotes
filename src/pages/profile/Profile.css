@@ -22,9 +22,8 @@
     margin-top: 2vh;
     margin: 0 7vh;
     margin-left: 2vh;
-    height: 15vh;
+    height: 19vh;
 }
- 
  
 .follow{
     box-shadow: 0px 1px 3px rgb(86, 109, 86);
@@ -50,7 +49,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    padding: 1vh;
+    padding-top: 2vh;
+    object-fit: cover;
 }
 .profile-top-img-container img{
     width: 13vh;
@@ -173,18 +173,29 @@
 .profile-desc-name{
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 100%;
 }
-.profile-desc-publish-notes{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-}
+ 
 .profile-desc-publish-notes p{
    font-size: 23px;
    font-weight: 600;
    text-align: center;
+}
+
+.residing{
+    display: flex;
+}
+.residing-first{
+   font-size: 18px;
+}
+.residing-second{
+    font-size: 17px;
+    font-weight: 300;
+}
+.desc{
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
 }
 @media only screen and (max-width: 768px) {
     .follow{
@@ -201,11 +212,13 @@
     .profile-top-img-container img{
         width: 7vh;
         height: 7vh; 
+        
+        object-fit: cover;
     }
     .profile-top{
         height: 11vh;
         border-radius: 8px;
-        width: 75vw;
+        width: 78vw;
     }    
     .number{
         font-size: 19px;
@@ -229,6 +242,25 @@
         color:rgb(7, 35, 94); 
         font-size: 1rem;
     }
-    
+    .user-right{
+        display: none;
+         
+    }
+    .complete-your-profile{
+        font-size: 19px;
+        font-weight: 500;
+    }
+    .desc{
+        font-size: 19px;
+        font-weight: 500;
+    }
+    .residing-first{
+        font-size: 18px;
+        font-weight: 400;
+     }
+     .residing-second{
+         font-size: 14px;
+         font-weight: 300;
+     }
 }
  

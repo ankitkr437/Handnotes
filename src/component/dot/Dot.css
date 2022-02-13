@@ -58,20 +58,7 @@
         height: 9vh;
         padding-left: 4vw;   
     }
-    .dot-container-item{
-        display: flex;
-        flex-direction: column;
-        list-style-type: none;
-        background-color: white;
-        border-radius: 10px;
-        margin-bottom: 0;
-        padding-left: 0;
-        width: 25vw;
-        align-items: center;
-        height: 13vh;
-        justify-content: center;
-        margin-top: 9vh;
-    }
+    
     .dot-container-item-1,.dot-container-item-2{
         font-size: 14px;
         line-height: 4vh;
@@ -81,4 +68,24 @@
         font-size: 16px;
         cursor: pointer;
      }
+     .dot-container{
+        top: 7px;
+        left: 19vh;
+     }
+     .dot-container-item {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        list-style-type: none;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 0;
+        padding-left: 1px;
+        width: 25vw;
+        align-items: center;
+        height: 13vh;
+        justify-content: center;
+        margin-top: 9vh;
+        left: 7vh;
+    }
 }

@@ -64,7 +64,7 @@ const Banner = () => {
         showStatus={false}
         showThumbs={false}
         autoFocus={true}
-        autoPlay={false}
+        autoPlay={true}
         infiniteLoop={true}
         transitionTime={1500}
         interval={3300}
@@ -77,9 +77,11 @@ const Banner = () => {
                 <div className="banner-first">
                  <div  className="banner-image-container" >
                  <Link to={`/profile/${x[0].userId}`} style={{textDecoration:"none"}}>
+
+                     
               <img
                 src={
-                  users.find((obj)=>obj._id==x[0].userId).profilePicture||pf+"DefaultBoy.jpg"
+                  users.find((obj)=>obj._id==x[0].userId).profilePicture?pf+users.find((obj)=>obj._id==x[0].userId).profilePicture:pf+"DefaultBoy.jpg"
                 }
                 className="banner-image"
               />

@@ -9,16 +9,21 @@ import {
  
 const Login = () => {
 
+
+  const audio= new Audio();
+  audio.src = "/music/update.wav";
   const email = useRef();
   const password = useRef();
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
 
 
   const onsubmithandler = (e) => {
-    console.log( email.current.value,password.current.value)
+    alert("Sit back and relax");
+        audio.play();
+  
     e.preventDefault();
     loginCall({ email: email.current.value, password: password.current.value }, dispatch);
-    
+    alert("Successfully registered");
   }
   return (
     <div className='login-container'>

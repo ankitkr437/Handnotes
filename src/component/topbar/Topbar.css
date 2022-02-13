@@ -182,14 +182,7 @@ form{
   justify-content: center;
   align-items: center;
 }
-@keyframes cutsign{
-  0%{
-    transform: skew(15deg) ;
-  }
-  100%{
-    transform:skew(0deg)
-  }
-}
+ 
 .menu-username{
   line-height: 19px;
   font-size: 20px;
@@ -208,8 +201,6 @@ form{
   box-shadow: 0px 1px 3px rgb(25, 37, 25);
   cursor: pointer;
   color: rgb(5, 5, 59);
-  animation: cutsign 0.5s linear ;
-  animation-iteration-count: infinite;
   font-size: 100px;
 }
 .menu-view-profile{
@@ -225,13 +216,16 @@ form{
   z-index: 10;
   height: 50vh;
   position: fixed;
-  background-color: rgb(61, 141, 216);
+  background-color: rgb(34, 191, 253);
+  
   padding: 30px 15px;
 }
 .profile{
   display: flex;
   height: 10vh;
   justify-content: center;
+   
+  
 }
 .menu-img{
   flex: 2;
@@ -259,17 +253,20 @@ form{
   font-size: 40px;
 }
 .menu-view-profile{
-  color: rgb(54, 23, 83);
-  font-weight: 500;
+  color: rgb(5 51 156);
+  font-weight: 600;
 }
 
+.menu-view-profile:hover{
+  text-decoration: underline;
+}
 .profile-update-menu{
  display: flex;
  align-items: center;
- position:absolute;
-  bottom: 0;
-  left: 20vw;
 }
+.profile-update-menu:hover{
+  text-decoration: underline;
+ }
 .profile-update-link-tag{
 font-size: 23px;
 font-weight: 600;
@@ -280,7 +277,11 @@ margin-bottom: 2vh;
 margin-left: 2vw;
 color: rgb(5, 3, 24);
 }
-
+ 
+#topbar-logout:hover{
+   text-decoration: underline;
+   cursor: pointer;
+}
 @media only screen and (max-width: 768px) {
   .topbar-title {
     font-family: "Shizuru", cursive;
@@ -324,19 +325,14 @@ color: rgb(5, 3, 24);
   .topbar-right {
     flex: 2.5; 
  }
-
- /* .topbar-right-notification-number {
-   display: none;
-}
-.topbar-right-cart-number {
-  display: none;
-}
-  .link-notification{
-      display: none;
-  }
-  .link-cart{
-      display: none;
-  } */
+ .profile-update-link-tag{
+   font-size: 16px;
+   margin-right: 10px;
+   margin-left: 5vw;
+ }
+ .topbar-setting{
+   margin-bottom: 1vh;
+ }
 }
   
 

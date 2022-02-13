@@ -1,6 +1,8 @@
 import React, { useContext, useRef } from "react";
 import "./Topbar.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
+ 
+
 import {
   Search,
   Person,
@@ -23,16 +25,8 @@ const Topbar = () => {
   const pf="https://handnoteapi.herokuapp.com/images/";
 
   const { user } = useContext(AuthContext);
-  //  const clickhandler=()=>{
-
-  //   if(search.current.style.display=="flex")
-  //   {
-  //     search.current.style.display="none";
-  //   }
-  //   else if(search.current.style.display="none")
-  //       search.current.style.display="flex";
-  //  }
-
+ 
+      
    const MenuClickHandler=()=>{
     if(menu.current.style.display=="flex" )
     {
@@ -42,6 +36,14 @@ const Topbar = () => {
         menu.current.style.display="flex";
    }
 
+   const currentuser=JSON.parse(localStorage.getItem("user"))
+   
+   const navigate = useNavigate();
+
+  const logouthandler=()=>{
+    localStorage.clear();
+    navigate('/register');
+  }
 
    const searchsubmit=(e)=>{
        e.preventDefault();
@@ -116,12 +118,17 @@ const Topbar = () => {
        <CloseRounded className="menu-cut-icon" onClick={MenuClickHandler} style={{fontSize:"55px"}} />
     </div>
        </div>
-
+        <hr />
        <Link to={`/profile/update`} style={{textDecoration:"none"}} className="profile-update-menu" onClick={MenuClickHandler}>
           <p className="profile-update-link-tag">Complete Your Profile</p>
-          <UpdateSharp className="profile-update-menu-icon"/>
+          <img src="https://img.icons8.com/ios/30/000000/settings--v2.png" className="topbar-setting"/>
             </Link>
-           
+        <div className="profile-update-menu" id="topbar-logout">
+         <p className="profile-update-link-tag">Logout</p>
+         <img src="https://img.icons8.com/external-sbts2018-blue-sbts2018/38/000000/external-logout-social-media-basic-1-sbts2018-blue-sbts2018.png"
+         className="topbar-setting"
+         />
+          </div>    
       </div>
      
 

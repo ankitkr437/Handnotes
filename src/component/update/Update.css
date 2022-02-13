@@ -69,6 +69,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    padding: 2vh 2vh;
  }
  .Update-profile-container-right-heading{
      font-size: 30px;
@@ -110,17 +111,25 @@
     color: white;
     border: 1px solid grey;
     border-radius: 10px;
-
+   font-size: 23px;
+}
+.Update-profile-container-right-form-submit:active{
+   font-size: 26px;
+}
+button[type=submit] {
+   background-color: rgb(182, 147, 238);
+   font-size: 3.5vh;
 }
 @media only screen and (max-width: 768px) {
     .Update-profile-container{
         width: 97vw; 
+        height: 120vh;
       }
       .Update-profile-container-right-form{
         width:100%;
     }
     .Update-profile-container-right{
-        padding: 2vh 2px; 
+        padding: 2vh 1vh; 
      }
      .Update-profile-container-right-heading{
         font-size: 18px;
@@ -135,4 +144,7 @@
        .Update-profile-container-left-top-username{
           font-size: 13px;
        }
+       .input-block{
+        font-size: 17px;
+      }
 }

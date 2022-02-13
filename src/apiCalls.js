@@ -20,5 +20,5 @@ export const RegisterCall = async (userCredential,dispatch) => {
   }
 };
  
-
+ 
 
