@@ -99,9 +99,12 @@ const Posttime = ({x}) => {
                     </div>
                 </div>
                 
-                <div className="post-topbar-dot-container">
-                 <Dot x={x}/>
-              </div>
+               {
+                   (x.userId === user._id) &&
+                   <div className="post-topbar-dot-container">
+                   <Dot x={x}/>
+                </div>
+               }
             </div>
 
             <div className="main-post" style={{ height: "57vh" }}>
