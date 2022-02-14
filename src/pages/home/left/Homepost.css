@@ -233,10 +233,10 @@ padding-left: 2vw;
         
     }
     .post-topbar-img {
-        width: 15vw;
+        width: 14vw;
         border-radius: 50%;
         object-fit: cover;
-        height: 15vw;
+        height: 14vw;
     }
      
 }

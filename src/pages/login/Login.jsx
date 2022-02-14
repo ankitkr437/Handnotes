@@ -36,7 +36,7 @@ const Login = () => {
                 <p className='logo-1-login'>
                     HandNotes
                 </p>
-                <p className='logo-3-login'>A website where you can buy or sell your notes</p>
+                <p className='logo-3-login'>A website where you can upload and get notes</p>
             </div>
       <div className='login-form-container'>
         

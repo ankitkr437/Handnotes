@@ -45,7 +45,7 @@ audio.src = "/music/comment.wav";
                 userId:user._id,
                 text:commenttext,
              });
-             window.location.reload();
+            
           } catch (err) {}
           console.log("ajjkk")
       }

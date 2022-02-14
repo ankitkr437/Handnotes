@@ -60,20 +60,26 @@ form{
   animation-direction: alternate;
   padding: 3px 2vw;
   padding-right: 5vw;
-  color: rgb(18, 31, 31);
+   
+  color: rgb(11, 12, 12);
   border: 1px solid grey;
 }
 
 .search-form label .topbar-center-icon {
+   
   position: absolute;
   border-radius: 7px;
-  width: 5vw;
-  height: 35px;
+  width: 5vh;
+  height: 5vh;
   position: absolute;
-  top: -2.8px;
-  right: 0vw;
+  right: 1vh;
+  top: 1px;
+  background-image: none;
+  background-color: none;
 }
- 
+.search-form label .topbar-center-icon:hover{
+  cursor: pointer;
+}
 @keyframes inputshow{
   0%{
     width:0;
@@ -87,12 +93,7 @@ form{
   border: none;
 }
 
-.search-form label .topbar-center-icon {
-  position: absolute;
-  background-image: linear-gradient(to right, rgb(83 96 220), rgb(77, 86, 207));
-  border-radius: 7px;
-  
-}
+ 
 .topbar-right {
   flex: 3;
   display: flex;
@@ -138,9 +139,9 @@ form{
 .menu{
   display: none;
   flex-direction: column;
-  width: 80vw;
+  width: 40vw;
   z-index: 10;
-  height: 50vh;
+  height: 100vh;
   position: fixed;
   background-color: rgb(166, 163, 209);
   padding: 30px 15px;
@@ -166,8 +167,8 @@ form{
 
 .menu-img{
   flex: 2;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   justify-content: center;
   
   text-align: center;
@@ -185,7 +186,7 @@ form{
  
 .menu-username{
   line-height: 19px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 200;
 }
 .topbar-menu-Img{
@@ -241,20 +242,21 @@ form{
   align-items: center;
 }
 .menu-username{
-  line-height: 16px;
+   font-size: 16px;
 }
 .topbar-menu-Img{
-  width: 55px;
-  height: 55px;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
   object-fit: cover;
 }
 .menu-cut-icon{
-  font-size: 40px;
+  font-size: 25px;
 }
 .menu-view-profile{
-  color: rgb(5 51 156);
+  color: darkblue;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .menu-view-profile:hover{
@@ -302,14 +304,14 @@ color: rgb(5, 3, 24);
   .topbar-left-icon {
     display: none;
   }
-  .topbar-center-input {
-    font-size: 16px;
-  }
+  
   .search-form label .topbar-center-icon {
     border-radius: 7px;
     width: 6vw;
     position: absolute;
-    height: 46px;
+    height: 6vw;
+    top: 2vw;
+    
     right: 2vw;
   }
   .topbar-center {
@@ -340,7 +342,151 @@ color: rgb(5, 3, 24);
   object-fit: cover;
   cursor: pointer;
 }
+.topbar-center-input {
+  font-size: 14px;
+  padding-right: 9vw;
+  padding-left: 3vw;
+}
+.menu{
+  display: none;
+  flex-direction: column;
+  width: 80vw;
+  z-index: 10;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(166, 163, 209);
+  padding: 30px 15px;
+  animation-name: menushow;
+  animation-duration: 0.4s;
+  animation-timing-function:linear;
+  animation-direction: alternate;
+}
+
+.menu-img{
+  flex: 2;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  
+  text-align: center;
+}
+.menu-desc{
+  flex: 4;
+  justify-content: center;
+  align-items: center;
+}
+.menu-cut{
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.menu-username{
+  line-height: 19px;
+  font-size: 20px;
+  font-weight: 200;
+}
+.topbar-menu-Img{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.menu-cut-icon{
+  font-size: 25px;
+}
+.menu-cut-icon :hover{
+  box-shadow: 0px 1px 3px rgb(25, 37, 25);
+  cursor: pointer;
+  color: rgb(5, 5, 59);
+  font-size: 100px;
+}
+.menu-view-profile{
+  color: rgb(4, 4, 56);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.menu{
+  display: none;
+  flex-direction: column;
+  width: 80vw;
+  z-index: 10;
+  height: 50vh;
+  position: fixed;
+  background-color: rgb(34, 191, 253);
+  
+  padding: 30px 15px;
+}
+.profile{
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+   
+  
+}
+.menu-img{
+  flex: 2;
+  width: 45px;
+  height: 45px;
+}
+.menu-desc{
+  flex: 4;
+}
+.menu-cut{
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.menu-username{
+   font-size: 16px;
+}
+.topbar-menu-Img{
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.menu-cut-icon{
+  font-size: 25px;
+}
+.menu-view-profile{
+  color: darkblue;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.menu-view-profile:hover{
+  text-decoration: underline;
+}
+.profile-update-menu{
+ display: flex;
+ align-items: center;
+}
+.profile-update-menu:hover{
+  text-decoration: underline;
+ }
+.profile-update-link-tag{
+font-size: 19px;
+font-weight: 600;
+color: darkblue;
+}
+.profile-update-menu-icon{
+margin-bottom: 2vh;
+margin-left: 2vw;
+color: rgb(5, 3, 24);
+}
+ 
+#topbar-logout:hover{
+   text-decoration: underline;
+   cursor: pointer;
+}
 }
   
 
- 
+@media only screen and (max-height: 400px) {
+  .search-form label .topbar-center-icon {
+    width: 3vw;
+    height: 3vw;
+  }
+}

@@ -1,8 +1,6 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef,Component } from "react";
 import "./Topbar.css";
 import { Link,useNavigate} from "react-router-dom";
- 
-
 import {
   Search,
   Person,
@@ -16,17 +14,21 @@ import {
 } from "@material-ui/icons";
 import { useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import Footer from '../footer/Footer';
+import axios from "axios";
 const Topbar = () => {
 
   const search=useRef();
   const menu=useRef();
-
+    
   const [placeholder, setplaceholder] = useState("..");
+  
   const pf="https://handnoteapi.herokuapp.com/images/";
 
   const { user,isFetching } = useContext(AuthContext);
  
-      
+  
+
    const MenuClickHandler=()=>{
     if(menu.current.style.display=="flex" )
     {
@@ -38,16 +40,17 @@ const Topbar = () => {
 
    const currentuser=JSON.parse(localStorage.getItem("user"))
       
-   console.log(currentuser);
+  
   const logouthandler=()=>{
     console.log("logout")
     localStorage.clear();
     window.location.reload();
   }
-  console.log(currentuser);
+  
    const searchsubmit=(e)=>{
        e.preventDefault();
-       console.log("submited")
+       console.log(search.current.value);
+       
    }
   return (
     <>
@@ -68,10 +71,14 @@ const Topbar = () => {
             className="topbar-center-input"
            ref={search}
           ></input>
-          <label for="sub"> <Search
-            className="topbar-center-icon"
-          /></label>
-          <input type="submit" id="sub" style={{display:"none"}}></input>
+          <label for="sub">
+          <img src="https://img.icons8.com/ios-filled/50/000000/search--v2.png"
+          className="topbar-center-icon"
+          /> 
+           </label>
+         
+          <button type="submit" id="sub" style={{display:"none"}}>
+          </button>
          
         </form>
         </div>
@@ -92,7 +99,7 @@ const Topbar = () => {
       </div>
 
 
-      <div className="menu" ref={menu}>
+      <div className="menu" ref={menu} style={{height:"100vh"}}>
        <div className="profile">
      <div className="menu-img">
      <Link to={user ? `/profile/${user._id}` : `/`} style={{ textDecoration: "none" }}>
@@ -128,7 +135,8 @@ const Topbar = () => {
          <img src="https://img.icons8.com/external-sbts2018-blue-sbts2018/38/000000/external-logout-social-media-basic-1-sbts2018-blue-sbts2018.png"
          className="topbar-setting"
          />
-          </div>    
+          </div> 
+          <Footer></Footer>   
       </div>
      
 

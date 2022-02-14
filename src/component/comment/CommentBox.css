@@ -11,8 +11,8 @@
 }
 
 .comment-box-img{
-    width: 7vh;
-    height: 7vh;
+    width: 6vh;
+    height: 6vh;
     box-sizing: border-box;
     border: 1px solid rgb(50, 104, 101);
     border-radius: 50%;
@@ -26,4 +26,15 @@
     background-color: rgb(219, 232, 238);
     margin-left: 1vw;
     padding: 7px 10px;
+}
+.comment-box-message-name{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vh;
+}
+.comment-box-message-name-value{
+     margin: 0;
+     font-size: 14px;
+     font-weight: 600;
+     color: darkblue;
 }

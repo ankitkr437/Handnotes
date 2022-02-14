@@ -1,3 +1,4 @@
+
 .main{
     display: flex;
     width: 100%;
@@ -36,6 +37,9 @@
     .left-container{
         padding: 1vh 2vh;
         padding-left: 0vh;
+       }
+       .trending-author {
+        font-size: 19px;
        }
 }
  

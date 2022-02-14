@@ -43,7 +43,7 @@
    display:flex;
    flex-direction: column;
    border: none;
-   font-size: 17px;
+   font-size: 15px;
     width: 90%;
 }
 .custom-file-upload{
@@ -67,4 +67,10 @@
         height:62vh;
         width: 75vw;
     }
+    #thumbnail-file-upload,#pdf-file-upload{
+        font-size: 11px;
+     }
+     .custom-file-upload{
+        font-size: 16px;
+     }
 }

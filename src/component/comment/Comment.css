@@ -7,7 +7,7 @@
 .comment-container{
     padding-top: 12vh;
     display: flex;
-    height: 120vh;
+    height: 100vh;
     padding: 2vh 2vw;
     position: relative;
 }
@@ -54,5 +54,8 @@
     .comment-submit-icon-form{
           width: 9vw;
       }
+      .comment-info-container{
+        padding: 9vh 0vw;
+    }
     
 }

@@ -4,10 +4,18 @@ import './Footer.css';
 const Footer = () => {
     return (
         <>
-         <div>
+         <div className='footer-complete-container'> 
          <div className='footer-container'>
-              <p className='footer-line-1'>all rights reserved @ ankit kumar</p>
+              <div className='contact-upper'>
+              <p>all rights reserved</p>
               <p>contact us</p>
+              </div>
+              <div className='contact-text'>
+              <a href="mailto:ankitloharshi@gmail.com">  <img src="https://img.icons8.com/ios/50/000000/email-open.png" className='contact-img'/>
+             </a>
+              <a href="https://github.com/ankitkr437/Handnotes"> <img src="https://img.icons8.com/ios-glyphs/50/000000/github.png" className='contact-img'/></a>
+              </div>
+              
           </div> 
          </div> 
         </>

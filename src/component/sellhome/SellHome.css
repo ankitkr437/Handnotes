@@ -25,7 +25,7 @@
     padding: 1.6vh 3vw;
     height: 4vw;
     width: 100%;
-    background-color: #7dadfd;
+    background-image: linear-gradient(to right, rgb(218 221 230), rgb(214 97 97));
 }
 .sell-post-home:hover{
    cursor: pointer;
@@ -43,6 +43,7 @@
     box-shadow: 0 6px 13px grey;
     font-size: 22px;
 }
+
 @media only screen and (max-width: 768px) {
     .sell-img-home img{
        width: 6vh;
@@ -59,8 +60,8 @@
         margin-right: 4vw;
     }
     .sell-post-home p{
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 500;
     }
     
 }
