@@ -99,12 +99,14 @@ const Posttime = ({x}) => {
                     </div>
                 </div>
                 
-               {
-                   (x.userId === user._id) &&
-                   <div className="post-topbar-dot-container">
+               {/* {
+                   user?
+                  (x.userId === user._id) &&
+                   (<div className="post-topbar-dot-container">
                    <Dot x={x}/>
-                </div>
-               }
+                </div>)
+                :alert("loading")
+               } */}
             </div>
 
             <div className="main-post" style={{ height: "57vh" }}>

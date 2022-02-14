@@ -29,7 +29,8 @@ const SignUp = () => {
                 email: email.current.value,
                 password: password.current.value,
             }, dispatch) : alert("password is not same")
-            alert("Successfully registered")
+           
+             alert("successfully registered")
     }
 
 
