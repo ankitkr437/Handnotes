@@ -89,8 +89,8 @@ audio.src = "/music/follow.wav";
             <p className="number-below">followings</p>
           </div>
           <div className="profile-top-notes-container">
-            <p className="number">0</p>
-            <p className="number-below">Notes Sold</p>
+            <p className="number">{isfetchpost && post.length}</p>
+            <p className="number-below">Notes Upload</p>
           </div>
         </div>
        <div>
@@ -142,8 +142,12 @@ audio.src = "/music/follow.wav";
         {/* <Sell /> */}
         <div className="user-timeline">
         <div className="user-post">
-       { isfetchpost ?post.map((y)=>(
+
+
+       { 
+       isfetchpost ?post.map((y)=>(
         <Profilepost x={y} key={y._id}/>
+
        )) :<Spinner animation="grow"  style={{width:"20vw",height:"10vw",marginTop:"30vh",color:"yellowgreen",marginLeft:"10vw"}}/>}
         </div>
          <div className="user-right">
@@ -154,6 +158,7 @@ audio.src = "/music/follow.wav";
         
           ):<Spinner animation="grow"  style={{width:"15vw",height:"15vw",marginTop:"10vh",color:"yellowgreen",marginLeft:"40vw"}}/>
      }
+
     </>
   );
 };
