@@ -488,5 +488,6 @@ color: rgb(5, 3, 24);
   .search-form label .topbar-center-icon {
     width: 3vw;
     height: 3vw;
+    top:0;
   }
 }

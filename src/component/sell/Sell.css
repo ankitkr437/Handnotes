@@ -16,6 +16,7 @@
    border-radius: 31px;
 }
 .sell-post{
+    display: flex;
     flex: 10;
     border: 1px solid grey;
     border-radius: 31px;

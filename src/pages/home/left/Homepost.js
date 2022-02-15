@@ -2,23 +2,10 @@ import React, { useContext } from "react";
 import Posttime from "./Posttime";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { useState, useEffect } from "react";
+import { useState,useEffect} from "react";
 import { format } from 'timeago.js';
 import {
   Search,
-  Person,
-  Chat,
-  Notifications,
-  LibraryBooksTwoTone,
-  ShoppingCart,
-  ShoppingCartOutlined,
-  ThumbUpAltOutlined,
-  ThumbDownAlt,
-  GradeOutlined,
-  ShoppingBasketOutlined,
-  ShareOutlined,
-  RadioButtonUncheckedSharp,
-  PostAddTwoTone,
 } from "@material-ui/icons";
 import { AuthContext } from "../../../context/AuthContext";
 const Post = () => {
@@ -34,9 +21,16 @@ const Post = () => {
   const [isnotes, setisnotes] = useState(false);
 
 
-  const { user } = useContext(AuthContext);
+  const { user ,searchedvalue,issearched} = useContext(AuthContext);
+ 
 
+  console.log(searchedvalue,issearched)
   const User = user;
+ 
+   
+
+  
+ 
   useEffect(() => {
     const fetchallusers = async () => {
       const res = await axios.get("https://handnoteapi.herokuapp.com/api/users/");
@@ -50,20 +44,32 @@ const Post = () => {
         return new Date(n2.createdAt) - new Date(n1.createdAt)
       }));
       setisnotes(true);
-
     }
 
     fetchallnotes();
     fetchallusers();
 
-  }, [User._id])
-
-
+  }, [user._id])
+ 
+ 
+  
+   const filterdnotes = (isnotes && issearched) && notes.filter((z)=> 
+    z.notename ===searchedvalue 
+  )
+   console.log(filterdnotes)
+  
+  
+    
+   
   return (
     <>
-      {notes.map((p, i) => (
+      { (issearched && !(searchedvalue==="")) ? filterdnotes.map((p, i) => (
         <Posttime x={p} key={i} />
-      ))}
+      ))
+      :notes.map((p, i) => (
+        <Posttime x={p} key={i} />
+      ))
+    }
     </>
   );
 };

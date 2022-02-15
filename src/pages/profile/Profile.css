@@ -209,7 +209,8 @@
         line-height: 3vh;
     }
     .profile-container{
-        padding-right: 5vh; 
+        padding-right: 1vh;
+        padding-left: 0vh;
     }
     .profile-top-img-container img{
         width: 9vh;
@@ -219,7 +220,7 @@
     .profile-top{
         height: 11vh;
         border-radius: 8px;
-        width: 78vw;
+        width: 91vw;
     }    
     .number{
         font-size: 19px;

@@ -23,9 +23,9 @@ const Profile = () => {
   const [isfetchpost,setisfetchpost]=useState(false)
   const [post,setpost] =useState([])
   const [isfollow,setisfollow]=useState(false)
-  const {user:currentuser, dispatch} =useContext(AuthContext);
+  const {user:currentuser, dispatch ,searchedvalue} =useContext(AuthContext);
 
-   
+  
 const audio= new Audio();
 audio.src = "/music/follow.wav";
  

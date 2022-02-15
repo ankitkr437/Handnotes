@@ -13,6 +13,7 @@ const Sell = () => {
          </div>
          <div className="sell-post">
            <p>Upload a Note</p>
+           <img src="https://img.icons8.com/dotty/50/000000/note.png"/>
          </div>
       </div>
   </>;

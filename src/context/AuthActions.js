@@ -25,3 +25,8 @@ export const Unfollow = (userId) => ({
   type: "UNFOLLOW",
   payload: userId,
 });
+
+export const SearchingNotes = (searchedvalue) => ({
+  type: "SEARCHING_NOTES",
+  payload: searchedvalue,
+});

@@ -18,14 +18,15 @@ import Footer from '../footer/Footer';
 import axios from "axios";
 const Topbar = () => {
 
-  const search=useRef();
+  const [search,setsearch] =useState("");
   const menu=useRef();
     
   const [placeholder, setplaceholder] = useState("..");
   
   const pf="https://handnoteapi.herokuapp.com/images/";
 
-  const { user,isFetching } = useContext(AuthContext);
+  const { user, isFetching, error, dispatch,searchedvalue,
+    searchdispatch,issearched } = useContext(AuthContext);
  
   
 
@@ -38,8 +39,7 @@ const Topbar = () => {
         menu.current.style.display="flex";
    }
 
-   const currentuser=JSON.parse(localStorage.getItem("user"))
-      
+    
   
   const logouthandler=()=>{
     console.log("logout")
@@ -48,9 +48,8 @@ const Topbar = () => {
   }
   
    const searchsubmit=(e)=>{
-       e.preventDefault();
-       console.log(search.current.value);
-       
+    e.preventDefault();
+    searchdispatch({ type: "SEARCHING_NOTES", payload:search});
    }
   return (
     <>
@@ -69,9 +68,9 @@ const Topbar = () => {
             type="text"
             placeholder={`Search for notes ${placeholder}`}
             className="topbar-center-input"
-           ref={search}
+           onChange={(e)=>setsearch(e.target.value)}
           ></input>
-          <label for="sub">
+          <label htmlFor="sub">
           <img src="https://img.icons8.com/ios-filled/50/000000/search--v2.png"
           className="topbar-center-icon"
           /> 
