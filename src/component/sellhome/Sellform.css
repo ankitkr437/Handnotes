@@ -3,11 +3,12 @@
     width: 45vw;
     display: flex;
     flex-direction: column;
-    border: 2px solid pink;
+    border: 1px solid darkgray;
     border-radius: 10px;
     box-sizing: border-box;
     z-index: 10;
-    background-color: rgb(148 176 223);
+    /* background-color: #c2cfe8; */
+    background-color: white;
     position: fixed;
     margin-top: 3h;
     transform: all 1s ease .2s;
@@ -30,12 +31,12 @@
     justify-content: center;
     align-items: center;
 }
-.sell-form input ,.sell-form button{
+.sell-form input  {
     height: 8vh;
     margin: 2% 0;
     width: 80%;
     border-radius: 10px;
-    border: 1px solid darkcyan;
+    border: 1px solid darkgray;
     padding: 1px 2vh;
 }
  
@@ -43,8 +44,9 @@
    display:flex;
    flex-direction: column;
    border: none;
-   font-size: 15px;
-    width: 90%;
+   font-size: 16px;
+    width: 82%;
+    margin-top: -2vh;
 }
 .custom-file-upload{
    color:darkslategray;
@@ -52,7 +54,8 @@
    height: 10%;
     margin: 2% 0;
     width: 80%;
-    line-height: 7vh;
+    line-height: 4vh;
+    font-weight: 600;
 }
 .custom-file-upload:hover{
     cursor: pointer;
@@ -62,15 +65,35 @@
     margin: 1%;
     width: 3vh;
 }
+.sellform-submit-button{
+    width: 83%;
+    background-color: white;
+    height: 9vh;
+    border-radius: 13px;
+    font-size: 21px;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 6px lightgray;
+    
+}
 @media only screen and (max-width: 768px) {
     .sell-form-container{
         height:62vh;
         width: 75vw;
     }
     #thumbnail-file-upload,#pdf-file-upload{
-        font-size: 11px;
+         
+        font-size: 12px;
+        width: 91%;
+        margin-top: -1vh;
      }
      .custom-file-upload{
         font-size: 16px;
+     }
+     .sellform-submit-button{
+           height: 6vh;
+           font-size: 16px;
+     }
+     .sell-form input {
+        height: 6vh;
      }
 }

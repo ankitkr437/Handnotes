@@ -28,7 +28,10 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const audio= new Audio();
   audio.src = "/music/like.wav";
-
+  const audio1= new Audio();
+  audio1.src = "/music/delete.wav";
+  const audioerror= new Audio();
+  audioerror.src = "/music/error.wav";
 const Posttime = ({x}) => {
     const { user } = useContext(AuthContext);
     const pf="https://handnoteapi.herokuapp.com/images/";
@@ -79,7 +82,22 @@ const Posttime = ({x}) => {
         setlike(islike? like - 1 : like + 1);
         setislike(!islike);
       }; 
-      
+      const DeleteNotes= async()=>{
+        let response = prompt(`Do you really want to delete this note if yes the type "YES" or type "NO" `);
+        console.log(response)
+        audio1.play();
+        
+            try {
+                response==="YES" && await axios.delete(`https://handnoteapi.herokuapp.com/api/notes/${x._id}`,{userId:user._id});
+                response==="YES" && alert("notes deleted successfully")
+             response==="YES" &&window.location.reload();
+            } catch (err) {
+              audioerror.play();
+              alert("sorry you can not delete this note")
+                console.log("unsuccess");
+            }
+        
+      }     
     return <>
         <div className="post-container" key={x._id} style={{ marginLeft: "3vw" }}>
             <div className="post-topbar">
@@ -99,14 +117,15 @@ const Posttime = ({x}) => {
                     </div>
                 </div>
                 
-               {/* {
-                   user?
-                  (x.userId === user._id) &&
-                   (<div className="post-topbar-dot-container">
-                   <Dot x={x}/>
-                </div>)
-                :alert("loading")
-               } */}
+               {
+                   user && x && (x.userId === user._id) &&
+                   <div className="post-topbar-edit-delete-container">
+                        <Link to={`/note/update/${x._id}`} style={{ textDecoration: "none" }}>
+                  <img src="https://img.icons8.com/material-outlined/48/000000/edit--v2.png" className="post-topbar-edit-img"/>
+                  </Link>
+                  <img src="https://img.icons8.com/fluency-systems-filled/48/000000/filled-trash.png" className="post-topbar-delete-img" onClick={DeleteNotes}/>
+                   </div>
+               }
             </div>
 
             <div className="main-post" style={{ height: "57vh" }}>

@@ -25,6 +25,7 @@
     padding: 1.6vh 3vw;
     height: 4vw;
     width: 100%;
+    box-shadow: 0 6px 13px rgb(227 179 179);
     background-image: linear-gradient(to right, rgb(218 221 230), rgb(214 97 97));
 }
 .sell-post-home:hover{
@@ -39,8 +40,8 @@
     font-weight: 500;
 }
 .sellform-submit-button {
-    background-color: #8190b5;
-    box-shadow: 0 6px 13px grey;
+    background-color: #95a8d8;
+    box-shadow: 0 6px 13px rgb(70, 62, 62);
     font-size: 22px;
 }
 
@@ -62,6 +63,11 @@
     .sell-post-home p{
         font-size: 16px;
         font-weight: 500;
+    }
+    .sellform-submit-button {
+        font-size: 17px;
+        width: 70%;
+        height: 6vh;
     }
     
 }

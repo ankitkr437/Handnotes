@@ -186,7 +186,7 @@ form{
  
 .menu-username{
   line-height: 19px;
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 200;
 }
 .topbar-menu-Img{
@@ -484,7 +484,7 @@ color: rgb(5, 3, 24);
 }
   
 
-@media only screen and (max-height: 400px) {
+@media only screen and (max-height: 450px) {
   .search-form label .topbar-center-icon {
     width: 3vw;
     height: 3vw;

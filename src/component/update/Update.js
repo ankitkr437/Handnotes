@@ -161,6 +161,7 @@ const Update = () => {
               <div className="input-box">
                 <p className="input-heading">Profile picture</p>
                 <input type="file" className="input-block"
+                id="input-bloack-file"
                 accept=".png,.jpeg,.jpg"
                 onChange={(e)=>setphoto(e.target.files[0])}
                   style={{ border: "none", borderRadius: "0%" }}

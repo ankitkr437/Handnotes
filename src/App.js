@@ -9,7 +9,8 @@ import Notifications from './pages/notifications/Notifications' ;
 import Cart from './pages/cart/Cart';
 import Note from './pages/notes/Note';
 import Update from "./component/update/Update";
-import Comment from '../src/component/comment/Comment'
+import Comment from '../src/component/comment/Comment';
+import UpdatePost from "./component/updatepost/UpdatePost";
 import { AuthContext } from "./context/AuthContext";
  
 function App() {
@@ -25,6 +26,7 @@ function App() {
      <Route path="/notes/:notesid"   element={<Note />} />
      <Route path="/cart/:notesid"   element={<Cart />} />
      <Route path="/profile/update"   element={<Update />} />
+     <Route path="/note/update/:notesid"   element={<UpdatePost />} />
      <Route path="/notifications"   element={<Notifications />} />
      <Route path="/viewcomment/:notesid"   element={<Comment />} />
      </Routes>
