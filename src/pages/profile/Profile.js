@@ -76,7 +76,7 @@ audio.src = "/music/follow.wav";
       <div className="profile-container">
         <div className="profile-top">
           <div className="profile-top-img-container">
-            <img  src={ user.profilePicture?pf+user.profilePicture:pf + "DefaultBoy.jpg"} ></img>
+            <img  src={ user.profilePicture?user.profilePicture:pf + "DefaultBoy.jpg"} ></img>
             
           </div>
          

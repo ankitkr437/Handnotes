@@ -14,7 +14,7 @@
     flex-direction: column;
     box-shadow: 0 6px 13px rgb(232 205 205);
     font-size: 0;
-    height: 82vh;
+    height: 69vh;
     padding-left: 4vh;
 }
 
@@ -49,6 +49,7 @@
     height: 6vh;
     width: 90%;
     font-size: 15px;
+    border: 1px solid grey;
     padding: 2vh;
 }
 .Update-post-input-box-file{

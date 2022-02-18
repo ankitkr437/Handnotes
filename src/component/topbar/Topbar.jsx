@@ -92,7 +92,7 @@ const Topbar = () => {
           </Link>
           <span className="topbar-right-cart-number" >0</span> */}
           <Link to={`/`} style={{ textDecoration: "none" }}>
-            <img src={(user && user.profilePicture)?pf+user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-right-Img" onClick={MenuClickHandler}  />
+            <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-right-Img" onClick={MenuClickHandler}  />
           </Link>
         </div>
       </div>
@@ -102,7 +102,7 @@ const Topbar = () => {
        <div className="profile">
      <div className="menu-img">
      <Link to={user ? `/profile/${user._id}` : `/`} style={{ textDecoration: "none" }}>
-            <img src={(user && user.profilePicture)?pf+user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-menu-Img" />
+            <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-menu-Img" />
           </Link>
      </div>
     <div className="menu-desc">

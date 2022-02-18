@@ -30,6 +30,8 @@ const Posttime = ({ x }) => {
     const [like, setlike] = useState(x.likes.length);
     const [islike, setislike] = useState(false);
     const [isbuy, setisbuy] = useState(true);
+    const [isseen, setisseen] = useState(false);
+    const [seen,setseen] =useState(0);
     const [users, setusers] = useState([])
     const [isfetchusers, setisfetchusers] = useState(false)
     const [isfetchcomment, setisfetchcomment] = useState();
@@ -45,6 +47,10 @@ const Posttime = ({ x }) => {
     useEffect(() => {
         setislike(x.likes.includes(user._id));
     }, [user._id, x.likes]);
+
+    useEffect(() => {
+        setisseen(x.buy.includes(user._id));
+       }, [user._id, x.seen]);
     useEffect(() => {
         const fetchalluser = async () => {
             const res = await axios.get("https://handnoteapi.herokuapp.com/api/users/");
@@ -73,7 +79,13 @@ const Posttime = ({ x }) => {
         setlike(islike ? like - 1 : like + 1);
         setislike(!islike);
     };
-
+    const seenhandler = () => {
+        try {
+          axios.put("https://handnoteapi.herokuapp.com/api/notes/" +x._id + "/buy", { userId: user._id });
+        } catch (err) {}
+        setseen(isseen? seen - 1 : seen + 1);
+        setisseen(!isseen);
+      }; 
     const DeleteNotes= async()=>{
         let response = prompt(`Do you really want to delete this note if yes the type "YES" or type "NO" `);
         console.log(response)
@@ -96,7 +108,7 @@ const Posttime = ({ x }) => {
         <div className="post-container" key={x._id} style={{ marginLeft: "3vw" }}>
             <div className="post-topbar">
                 <Link to={`/profile/${x.userId}`} style={{ textDecoration: "none" }}>
-                    <img src={user.profilePicture?pf+user.profilePicture:pf +"DefaultPic.png"} className="post-topbar-img" ></img>
+                    <img src={user.profilePicture?user.profilePicture:pf +"DefaultPic.png"} className="post-topbar-img" ></img>
                 </Link>
                 <div>
                     <p className="post-topbar-name">{isfetchusers ? users.find(obj => obj._id === x.userId).username : user.username}</p>
@@ -126,21 +138,25 @@ const Posttime = ({ x }) => {
                     <p className="main-post-desc">
                         {x.desc}
                     </p>
-                    <p className="main-post-note-price">Notes Price:{x.price || 0}USD</p>
+                    {/* <p className="main-post-note-price">Notes Price:{x.price || 0}USD</p> */}
                     <div className="post-likes-comment">
                         <div className="main-post-likes">
-                            <ThumbUpAltOutlined onClick={likehandler} />
-
-                            <GradeOutlined />{like} likes
+                            
+                            <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/64/000000/external-like-feedback-kmg-design-glyph-kmg-design.png"
+                            onClick={likehandler}
+                            className="post-like-img"
+                            />
+                         <p className="post-like-count"> {like} likes</p>  
                         </div>
                         <div className="main-post-buy">
-                            <ShoppingBasketOutlined /> {x.buy.length} buy
+                        <img src="https://img.icons8.com/external-icongeek26-glyph-icongeek26/64/000000/external-view-user-interface-icongeek26-glyph-icongeek26.png" className="post-seen-img"/>
+                        <p className="post-seen-count"> {x.buy.length} seen </p>
                         </div>
                     </div>
                 </div>
                 <Link to={`/notes/${x._id}`} style={{ textDecoration: "none" }}>
-                    <div className="main-post-img-container">
-                        <img src={x.thumbnailfilename?pf+x.thumbnailfilename:pf+"images-notes.jpg"} className="main-post-image"></img>
+                    <div className="main-post-img-container" onClick={seenhandler}>
+                        <img src={x.thumbnailfilename?x.thumbnailfilename:pf+"images-notes.jpg"} className="main-post-image"></img>
                     </div>
                 </Link>
             </div>

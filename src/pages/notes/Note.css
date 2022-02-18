@@ -24,12 +24,12 @@
     height: 70vh;
     flex-direction: column;
     width: 100%;
-    border: 1px solid yellowgreen;
+    border: 1px solid rgb(47, 100, 180);
     padding: 1vh 1vw;
     flex: 2;
  }
 .notefile-note-image-container{
-    border: 1px solid yellowgreen;
+    border: 1px solid rgb(50, 78, 205);
     flex: 2;
 }
  .notefile-note-name-container,.notefile-note-seen-container,.notefile-note-desc-container{
@@ -41,7 +41,7 @@
 .notefile-note-name-logo,.notefile-note-seen-logo,.notefile-note-Desc-logo{
     font-size: 23px;
     font-weight: 500;
-    color: rgb(170, 103, 16);
+    color: darkblue;
 }
 
 .notefile-note-name,.notefile-note-seen,.notefile-note-desc{
@@ -70,14 +70,20 @@
 @media only screen and (max-width: 768px) {
     .notefile-note-complete-desc-image-container{
         display: flex;
-        height: 50vh;
+        height: 40vh;
         width: 100%;
      }
     .notefile-note-image-container .notefile-note-thumbnail-image{
-        height: 50vh;
+        height: 40vh;
         width: 100%;
      }
      .notefile-note-image-container{
         flex: 1;
     }
+    .notefile-note-name-logo,.notefile-note-seen-logo,.notefile-note-Desc-logo{
+        font-size: 18px;
+    }
+    .notefile-note-complete-desc-container{
+        height: 40vh; 
+     }
 }

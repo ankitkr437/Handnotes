@@ -60,13 +60,14 @@ const Note = () => {
 
             
            <div className='notefile-note-image-container'>
-           <img src={noteone.thumbnailfilename?pfpdf+noteone.thumbnailfilename:pfpdf+"images-notes.jpg"} className="notefile-note-thumbnail-image"></img>
+           <img src={noteone.thumbnailfilename?noteone.thumbnailfilename:pfpdf+"images-notes.jpg"} className="notefile-note-thumbnail-image"></img>
            </div>
          </div>
 
 
          <div className='notefile-note-pdf'>
-         <embed src={noteone.notefilename?url+noteone.notefilename:url+"1.pdf"}/>
+         <embed src={noteone.notefilename?noteone.notefilename:url+"1.pdf"}
+         />
         
          </div>
         </div>

@@ -20,6 +20,8 @@ const Update = () => {
   const [desc, setdesc] = useState();
   const [photo, setphoto] = useState(null);
   const [password, setpassword] = useState();
+  const [Loading,setLoading] =useState(false);
+  const [image,setimage] =useState("");
   const buttonupdate  =useRef();
 
 
@@ -28,6 +30,8 @@ const Update = () => {
   const audioerror= new Audio();
   audioerror.src = "/music/erroe.wav";
   const navigate = useNavigate();
+
+
   const UpdateFormHandler = async(e) => {
     e.preventDefault();
    
@@ -44,17 +48,22 @@ const Update = () => {
     };
     if (photo) {
       const data = new FormData();
-      const fileName = Date.now() + photo.name;
-      data.append("name", fileName);
+      // const fileName = Date.now() + photo.name;
+      // data.append("name", fileName);
       data.append("file", photo);
-      newUser.profilePicture = fileName;
-      try {
-        await axios.post("https://handnoteapi.herokuapp.com/api/upload", data);
-        alert("successfully uploaded...")
-        navigate('/');
-      } catch (err) {
-        audioerror.play();
-      }
+      data.append("upload_preset", 'handnoteimages');
+      const res=await axios.post("https://api.cloudinary.com/v1_1/dw2fok6if/image/upload",data)
+      newUser.profilePicture = await  res.data.secure_url;
+      // try {
+      //   await axios.post("https://handnoteapi.herokuapp.com/api/upload", data);
+      //   alert("successfully uploaded...")
+      //   navigate('/');
+      // } catch (err) {
+      //   audioerror.play();
+      // }
+      
+      console.log(res.data.secure_url);
+      console.log(newUser.profilePicture)
     }
     try{
         await axios.put(`https://handnoteapi.herokuapp.com/api/users/${user._id}`,newUser);
@@ -77,7 +86,7 @@ const Update = () => {
 
             <div className="Update-profile-container-left-top">
 
-              <img src={user.profilePicture?pf+user.profilePicture:pf +"DefaultPic.png"}className="Update-profile-container-left-top-img"></img>
+              <img src={user.profilePicture?user.profilePicture:pf +"DefaultPic.png"}className="Update-profile-container-left-top-img"></img>
 
               <div className="Update-profile-container-left-top-user-desc">
                 <p className="Update-profile-container-left-top-name">

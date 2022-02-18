@@ -1,5 +1,5 @@
 .sell-form-container{
-    height:85vh;
+    height:64vh;
     width: 45vw;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 .sell-form{
-    height: 90%;
+    height: 84%;
     width: 100%;
     flex-direction: column;
     box-sizing: border-box;
@@ -31,8 +31,8 @@
     justify-content: center;
     align-items: center;
 }
-.sell-form input  {
-    height: 8vh;
+.sell-form input ,#pdf-file-upload {
+    height: 7vh;
     margin: 2% 0;
     width: 80%;
     border-radius: 10px;
@@ -40,7 +40,7 @@
     padding: 1px 2vh;
 }
  
-#thumbnail-file-upload,#pdf-file-upload{
+#thumbnail-file-upload{
    display:flex;
    flex-direction: column;
    border: none;
@@ -48,6 +48,7 @@
     width: 82%;
     margin-top: -2vh;
 }
+ 
 .custom-file-upload{
    color:darkslategray;
    font-size: 18px;
@@ -68,7 +69,7 @@
 .sellform-submit-button{
     width: 83%;
     background-color: white;
-    height: 9vh;
+    height: 7vh;
     border-radius: 13px;
     font-size: 21px;
     border: 1px solid gray;
@@ -77,23 +78,31 @@
 }
 @media only screen and (max-width: 768px) {
     .sell-form-container{
-        height:62vh;
+        height:51vh;
         width: 75vw;
     }
-    #thumbnail-file-upload,#pdf-file-upload{
+    #thumbnail-file-upload{
          
         font-size: 12px;
         width: 91%;
         margin-top: -1vh;
      }
+     #pdf-file-upload{
+         height: 5vh;
+         font-size: 15px;
+     }
      .custom-file-upload{
         font-size: 16px;
      }
      .sellform-submit-button{
-           height: 6vh;
+           height: 5vh;
            font-size: 16px;
      }
      .sell-form input {
         height: 6vh;
+        font-size: 15px;
+     }
+     .sell-form{
+         height: 84%;
      }
 }

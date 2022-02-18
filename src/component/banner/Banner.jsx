@@ -81,7 +81,7 @@ const Banner = () => {
                      
               <img
                 src={
-                  users.find((obj)=>obj._id==x[0].userId).profilePicture?pf+users.find((obj)=>obj._id==x[0].userId).profilePicture:pf+"DefaultBoy.jpg"
+                  users.find((obj)=>obj._id==x[0].userId).profilePicture?users.find((obj)=>obj._id==x[0].userId).profilePicture:pf+"DefaultBoy.jpg"
                 }
                 className="banner-image"
               />

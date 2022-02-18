@@ -15,7 +15,7 @@ function UpdatePost() {
   const [price,setprice]=useState();
  
   const [noteupdatedphoto, setnoteupdatedphoto] = useState(null);
-  const [noteupdatedfile, setnoteupdatedfile] = useState(null);
+  const [noteupdatedfile, setnoteupdatedfile] = useState("");
   
   const audio= new Audio();
   audio.src = "/music/update.wav";
@@ -31,30 +31,38 @@ function UpdatePost() {
         userId: user._id,
         notename:notename,
         desc:  desc,
-        price:price,
+        // price:price,
+        notefilename :noteupdatedfile,
       };
       if (noteupdatedphoto) {
         const data = new FormData();
-        const fileName = Date.now() + noteupdatedphoto.name;
-        data.append("name", fileName);
-        data.append("file", noteupdatedphoto);
-        newNote.thumbnailfilename = fileName;
-        try {
-          await axios.post("https://handnoteapi.herokuapp.com/api/upload", data);
+       
+      data.append("file", noteupdatedphoto);
+      data.append("upload_preset", 'handnoteimages');
+      const res=await axios.post("https://api.cloudinary.com/v1_1/dw2fok6if/image/upload",data)
+      newNote.thumbnailfilename = await  res.data.secure_url;
+
+        // const data = new FormData();
+        // const fileName = Date.now() + noteupdatedphoto.name;
+        // data.append("name", fileName);
+        // data.append("file", noteupdatedphoto);
+        // newNote.thumbnailfilename = fileName;
+        // try {
+        //   await axios.post("https://handnoteapi.herokuapp.com/api/upload", data);
          
-        } catch (err) {}
+        // } catch (err) {}
       }
-      if(noteupdatedfile){
-        const data = new FormData();
-        const fileName = Date.now() + noteupdatedfile.name;
-        data.append("pdfname", fileName);
-        data.append("pdffile", noteupdatedfile);
-        newNote.notefilename = fileName;
+      // if(noteupdatedfile){
+      //   const data = new FormData();
+      //   const fileName = Date.now() + noteupdatedfile.name;
+      //   data.append("pdfname", fileName);
+      //   data.append("pdffile", noteupdatedfile);
+      //   newNote.notefilename = fileName;
   
-        try {
-          await axios.post("https://handnoteapi.herokuapp.com/api/upload/pdf", data);
-        } catch (err) {}
-      }
+      //   try {
+      //     await axios.post("https://handnoteapi.herokuapp.com/api/upload/pdf", data);
+      //   } catch (err) {}
+      // }
       try {
         await axios.put(`https://handnoteapi.herokuapp.com/api/notes/${notesid}`,newNote);
         audio.play();
@@ -90,14 +98,24 @@ function UpdatePost() {
               
  
 
-              <div className="Update-post-input-box">
+              {/* <div className="Update-post-input-box">
                 <p className="Update-post-input-heading" >Price</p>
                 <input type="text" placeholder="Price in usd"
                 onChange={(e)=>setprice(e.target.value)}
                  className="Update-post-input-block"  ></input>
               </div>
-               
+                */}
  
+              <div className="Update-post-input-box">
+                <p  className="Update-post-input-heading">Note file Url</p>
+                <input type="text" className="Update-post-input-block"
+                placeholder="note file url(file must be in pdf format)"
+               onChange={(e)=>setnoteupdatedfile(e.target.value)}
+                   
+                ></input>
+              </div>
+
+
               <div className="Update-post-input-box-file">
                 <p  className="Update-post-input-heading-file">Thumbnail file</p>
                 <input type="file" className="Update-post-input-block-file"
@@ -107,14 +125,7 @@ function UpdatePost() {
                 ></input>
               </div>
 
-              <div className="Update-post-input-box-file">
-                <p  className="Update-post-input-heading-file">Note file</p>
-                <input type="file" className="Update-post-input-block-file"
-               accept=".pdf"
-               onChange={(e)=>setnoteupdatedfile(e.target.files[0])}
-                   
-                ></input>
-              </div>
+              
 
                
  

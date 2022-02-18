@@ -198,7 +198,25 @@ padding-left: 2vw;
     height: 6vh;
     width: 6vh;
 }
- 
+.post-seen-img{
+    height: 5vh;
+    width: 5vh;
+}
+.post-like-img{
+    height: 4vh;
+    width: 4vh;
+}
+.post-like-count{
+    font-size: 16x;
+    padding-top: 3vh;
+    padding-left: 1vh;
+}  
+.post-seen-count{
+    font-size: 16px;
+    padding-top: 2vh;
+    padding-left: 1vh;
+}
+
 @media only screen and (max-width: 650px) {
     .post-container{
         height: 62vh;
@@ -232,6 +250,16 @@ padding-left: 2vw;
         display: flex;
         width: 100%;
         height: 8vh;
+    }
+    .post-like-count{
+        font-size: 18px;
+        padding-top: 2vh;
+        padding: 1vh;
+    }  
+    .post-seen-count{
+        font-size: 18px;
+        padding-top: 1vh;
+        padding: 1vh;
     }
     .comment-submit-icon{
         position: relative;
@@ -279,6 +307,31 @@ padding-left: 2vw;
         height: 3vh;
         width: 3vh;
     }
+    .post-seen-img{
+        height: 3vh;
+        width: 3vh;
+    }
+    .post-like-img{
+        height: 3vh;
+        width: 3vh;
+    }
+    .post-like-count{
+        font-size: 17px;
+        padding-top: 3vh;
+        padding-left: 1vh;
+    }  
+    .post-seen-count{
+        font-size: 17px;
+        padding-top: 2vh;
+        padding-left: 1vh;
+    }
 }
-
+@media only screen and (max-height: 450px) {
+    .post-topbar-img {
+        width: 9vw;
+        border-radius: 50%;
+        object-fit: cover;
+        height: 9vw;
+    }
+  }
 
