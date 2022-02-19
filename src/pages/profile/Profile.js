@@ -98,8 +98,8 @@ audio.src = "/music/follow.wav";
          {
            currentuser._id!==userId &&(
              <button className="follow" onClick={FollowHandle} >
-             {isfollow?"unfollow":"follow"}
-            {isfollow?<Remove className="follow-icon" />:<Add className="follow-icon"/>}
+             {isfollow?"follow":"unfollow"}
+            {isfollow?<Add className="follow-icon"/>:<Remove className="follow-icon" />}
              </button> )
            }
            <p> {}</p>
@@ -146,7 +146,7 @@ audio.src = "/music/follow.wav";
 
        { 
        isfetchpost ?post.map((y)=>(
-        <Profilepost x={y} key={y._id}/>
+        <Profilepost x={y} currentprofileuser={user} key={y._id}/>
 
        )) :<Spinner animation="grow"  style={{width:"20vw",height:"10vw",marginTop:"30vh",color:"yellowgreen",marginLeft:"10vw"}}/>}
         </div>

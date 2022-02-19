@@ -66,8 +66,15 @@ const Note = () => {
 
 
          <div className='notefile-note-pdf'>
-         <embed src={noteone.notefilename?noteone.notefilename:url+"1.pdf"}
-         />
+        {
+           noteone.notefilename?
+           <iframe src={noteone.notefilename&&noteone.notefilename} className='notefile-iframe' >
+          </iframe>
+           :
+           <p style={{textAlign:"center"}}>Not Available</p>
+        }
+         {/* <embed src={noteone.notefilename?noteone.notefilename:url+"1.pdf"}
+         /> */}
         
          </div>
         </div>

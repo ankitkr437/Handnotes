@@ -6,13 +6,13 @@
  .notefile-note-container{
      display: flex;
      flex-direction: column;
-     height: 100%;
+     height: 170vh;
      width: 100%;
      padding-top: 11vh;
      padding-left: 2vw;
      padding-right: 2vw;
  }
-
+ 
  .notefile-note-complete-desc-image-container{
     display: flex;
     height: 70vh;
@@ -66,8 +66,20 @@
     width: 100%;
     height: 70vh;
 }
-
+.notefile-iframe{
+    height: 100vh;
+    width: 100%;
+    border: 2px solid gray;
+}
 @media only screen and (max-width: 768px) {
+    .notefile-note-container{
+        height: 130vh;
+    }
+    .notefile-iframe{
+        width: 100%;
+        height: 72vh;
+
+    }
     .notefile-note-complete-desc-image-container{
         display: flex;
         height: 40vh;
