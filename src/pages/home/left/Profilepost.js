@@ -96,7 +96,7 @@ const Posttime = ({ x,currentprofileuser}) => {
             try {
                 response==="YES" && await axios.delete(`https://handnoteapi.herokuapp.com/api/notes/${x._id}`,{userId:user._id});
                 response==="YES" && alert("notes deleted successfully")
-             response==="YES" &&window.location.reload();
+             response==="YES" && navigate('/');
             } catch (err) {
               audioerror.play();
               alert("sorry you can not delete this note")
