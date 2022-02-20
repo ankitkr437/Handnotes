@@ -106,7 +106,7 @@ const Sell = () => {
             ></input>
             <input
               type="text"
-              placeholder="Descritpion"
+              placeholder="Descritpion(not more than 10 words)"
               className="sell-form-descritpion"
               ref={descritpion}
               required

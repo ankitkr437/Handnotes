@@ -55,7 +55,10 @@ const Note = () => {
         <p className='notefile-note-Desc-logo'>Descritpion:-</p>
            <p className='notefile-note-desc'>{noteone.desc?noteone.desc:"Not Available"}</p>
          </div>   
-
+         <div className='notefile-note-url-container'>
+        <p className='notefile-note-url-logo'>Url of pdf:-</p>
+           <a className='notefile-note-url' href={noteone.notefilename&&noteone.notefilename}>Click here to view the pdf</a>
+         </div>
            </div>
 
             
