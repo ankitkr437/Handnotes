@@ -285,6 +285,7 @@ color: darkblue;
 }
 
 
+ 
 .menu{
   display: none;
   flex-direction: column;
@@ -294,8 +295,12 @@ color: darkblue;
   position: fixed;
   background-color: rgb(34, 191, 253);
   padding: 30px 15px;
+  animation-name: menushowsmall;
+  animation-duration: 0.4s;
+  animation-timing-function:linear;
+  animation-direction: alternate;
 }
-@keyframes menushow{
+@keyframes menushowsmall{
   0%{
     width:0;
   }
@@ -303,6 +308,7 @@ color: darkblue;
     width: 80vw;
   }
 }
+ 
 .profile{
   display: flex;
   height: 10vh;
