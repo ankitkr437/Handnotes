@@ -98,8 +98,8 @@ audio.src = "/music/follow.wav";
          {
            currentuser._id!==userId &&(
              <button className="follow" onClick={FollowHandle} >
-             {isfollow?"follow":"unfollow"}
-            {isfollow?<Add className="follow-icon"/>:<Remove className="follow-icon" />}
+             {isfollow?"unfollow":"follow"}
+            {isfollow?<Remove className="follow-icon" />:<Add className="follow-icon"/>}
              </button> )
            }
            <p> {}</p>
