@@ -293,8 +293,15 @@ color: darkblue;
   height: 50vh;
   position: fixed;
   background-color: rgb(34, 191, 253);
-  
   padding: 30px 15px;
+}
+@keyframes menushow{
+  0%{
+    width:0;
+  }
+  100%{
+    width: 80vw;
+  }
 }
 .profile{
   display: flex;
