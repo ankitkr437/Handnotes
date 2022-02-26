@@ -9,7 +9,7 @@ const SignUp = () => {
 
 
     const audio= new Audio();
-    audio.src = "/music/update.wav";
+    audio.src = "/music/comment.wav";
     
 
     const username = useRef();
@@ -68,7 +68,8 @@ const SignUp = () => {
 
                     <input type="password" placeholder='Confirm Password'   className="signup-input" ref={confirmpassword} required></input>
                     
-                    <input type="submit" placeholder='Register'   className="signup-input" style={{ backgroundColor: "#1e9ec7" }} disabled={isFetching}></input>
+                    <input type="submit" placeholder='Register'   
+                    id="signup-submit" className="signup-input" style={{ backgroundColor: "#1e9ec7" }} disabled={isFetching}></input>
                 </form>
 
                 <div className='login-signup-query' >

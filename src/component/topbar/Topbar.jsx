@@ -83,14 +83,6 @@ const Topbar = () => {
         </div>
         <div className="topbar-right">
            
-          {/* <Link to={`/notifications/1`} style={{ textDecoration: "none" }} className="link-notification">
-            <Notifications className="topbar-right-notification" />
-          </Link>
-          <span className="topbar-right-notification-number" >+3</span>
-          <Link to={`/cart/1`} style={{ textDecoration: "none" }} className="link-cart">
-            <ShoppingCartOutlined className="topbar-right-cart" />
-          </Link>
-          <span className="topbar-right-cart-number" >0</span> */}
           <Link to={`/`} style={{ textDecoration: "none" }}>
             <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultBoy.jpg"} className="topbar-right-Img" onClick={MenuClickHandler}  />
           </Link>

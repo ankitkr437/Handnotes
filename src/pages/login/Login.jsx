@@ -11,7 +11,7 @@ const Login = () => {
 
 
   const audio= new Audio();
-  audio.src = "/music/update.wav";
+  audio.src = "/music/comment.wav";
   const email = useRef();
   const password = useRef();
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
@@ -52,7 +52,7 @@ const Login = () => {
 
             <input type="password" placeholder='Password' className='input-login'  ref={password} required minLength="6"></input>
 
-            <input type="submit" placeholder="login" className='input-login' style={{ backgroundColor: "#1e9ec7" }} disabled={isFetching} ></input>
+            <input type="submit" placeholder="login" id='login-submit' className='input-login' style={{ backgroundColor: "#1e9ec7" }} disabled={isFetching} ></input>
 
           </form>
 

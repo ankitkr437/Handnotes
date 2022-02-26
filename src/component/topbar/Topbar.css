@@ -15,7 +15,7 @@
   box-shadow: 0px 1px 3px rgb(25, 37, 25);
 }
 .topbar-left {
-  flex: 3;
+  flex: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@
   color: black;
 }
 .topbar-center {
-  flex: 6;
+  flex:7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,38 +95,17 @@ form{
 
  
 .topbar-right {
-  flex: 3;
+  flex: 1;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content:center;
+  align-items:center;
   position: relative;
 }
-.topbar-right-cart {
-  color: rgb(10, 7, 44);
-  cursor: pointer;
-}
-.topbar-right-notification {
-  color: rgb(10, 7, 44);
-  cursor: pointer;
-}
-.topbar-right-notification-number {
-  position: absolute;
-  font-weight: 100;
-  left: 24%;
-  top: 2%;
-  color: rgb(10, 7, 44);
-}
-.topbar-right-cart-number {
-  position: absolute;
-  font-weight: 300;
-  left: 47.1%;
-  bottom: 57%;
-  color: rgb(10, 7, 44);
-}
-
+ 
+ 
 .topbar-right-Img {
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
@@ -141,9 +120,8 @@ form{
   flex-direction: column;
   width: 40vw;
   z-index: 10;
-  height: 100vh;
   position: fixed;
-  background-color: rgb(166, 163, 209);
+  background-color: rgb(105, 171, 247);
   padding: 30px 15px;
   animation-name: menushow;
   animation-duration: 0.4s;
@@ -156,7 +134,7 @@ form{
     width:0;
   }
   100%{
-    width: 80vw;
+    width: 40vw;
   }
 }
 .profile{
@@ -167,10 +145,9 @@ form{
 
 .menu-img{
   flex: 2;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   justify-content: center;
-  
   text-align: center;
 }
 .menu-desc{
@@ -186,104 +163,63 @@ form{
  
 .menu-username{
   line-height: 19px;
-  font-size: 26px;
-  font-weight: 200;
+  font-size: 24px;
+  font-weight: 400;
 }
 .topbar-menu-Img{
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
 }
 .menu-cut-icon{
   font-size: 80px;
 }
-.menu-cut-icon :hover{
-  box-shadow: 0px 1px 3px rgb(25, 37, 25);
-  cursor: pointer;
-  color: rgb(5, 5, 59);
-  font-size: 100px;
-}
-.menu-view-profile{
-  color: rgb(4, 4, 56);
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.menu{
-  display: none;
-  flex-direction: column;
-  width: 80vw;
-  z-index: 10;
-  height: 50vh;
-  position: fixed;
-  background-color: rgb(34, 191, 253);
-  
-  padding: 30px 15px;
-}
-.profile{
-  display: flex;
-  height: 10vh;
-  justify-content: center;
-   
-  
-}
-.menu-img{
-  flex: 2;
-  width: 45px;
-  height: 45px;
-}
-.menu-desc{
-  flex: 4;
-}
-.menu-cut{
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-.menu-username{
-   font-size: 16px;
-}
-.topbar-menu-Img{
-  width: 7vh;
-  height: 7vh;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.menu-cut-icon{
-  font-size: 25px;
+.menu-cut-icon:hover{
+   cursor: pointer;
 }
 .menu-view-profile{
   color: darkblue;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 19px;
 }
 
-.menu-view-profile:hover{
-  text-decoration: underline;
+ 
+.profile{
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  
 }
+ 
 .profile-update-menu{
  display: flex;
  align-items: center;
+ margin-left: 2vh;
 }
 .profile-update-menu:hover{
   text-decoration: underline;
  }
 .profile-update-link-tag{
-font-size: 23px;
+font-size: 20px;
 font-weight: 600;
-color: rgb(14, 5, 37);
+color: darkblue;
 }
-.profile-update-menu-icon{
+.topbar-setting{
+  height: 23px;
+  width: 23px;
 margin-bottom: 2vh;
-margin-left: 2vw;
-color: rgb(5, 3, 24);
+margin-left: 1vw;
+color: darkblue;
 }
  
 #topbar-logout:hover{
    text-decoration: underline;
    cursor: pointer;
 }
+
+
+
 @media only screen and (max-width: 768px) {
   .topbar-title {
     font-family: "Shizuru", cursive;
@@ -347,65 +283,7 @@ color: rgb(5, 3, 24);
   padding-right: 9vw;
   padding-left: 3vw;
 }
-.menu{
-  display: none;
-  flex-direction: column;
-  width: 80vw;
-  z-index: 10;
-  height: 100vh;
-  position: fixed;
-  background-color: rgb(166, 163, 209);
-  padding: 30px 15px;
-  animation-name: menushow;
-  animation-duration: 0.4s;
-  animation-timing-function:linear;
-  animation-direction: alternate;
-}
 
-.menu-img{
-  flex: 2;
-  width: 45px;
-  height: 45px;
-  justify-content: center;
-  
-  text-align: center;
-}
-.menu-desc{
-  flex: 4;
-  justify-content: center;
-  align-items: center;
-}
-.menu-cut{
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
- 
-.menu-username{
-  line-height: 19px;
-  font-size: 20px;
-  font-weight: 200;
-}
-.topbar-menu-Img{
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.menu-cut-icon{
-  font-size: 25px;
-}
-.menu-cut-icon :hover{
-  box-shadow: 0px 1px 3px rgb(25, 37, 25);
-  cursor: pointer;
-  color: rgb(5, 5, 59);
-  font-size: 100px;
-}
-.menu-view-profile{
-  color: rgb(4, 4, 56);
-  font-weight: 600;
-  font-size: 20px;
-}
 
 .menu{
   display: none;
@@ -462,6 +340,7 @@ color: rgb(5, 3, 24);
 .profile-update-menu{
  display: flex;
  align-items: center;
+ margin-left: 0;
 }
 .profile-update-menu:hover{
   text-decoration: underline;
@@ -480,6 +359,11 @@ color: rgb(5, 3, 24);
 #topbar-logout:hover{
    text-decoration: underline;
    cursor: pointer;
+}
+.topbar-setting{
+  height: 20px;
+  width: 20px;
+  margin-left: 0;
 }
 }
   

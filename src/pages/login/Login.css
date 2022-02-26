@@ -52,9 +52,9 @@
     border: 1px solid grey;
     padding: 3px 2vw;
 }
-.input-login:active{
+#login-submit:active{
     background-color: rgb(238, 236, 227);
-    font-size: 27px;
+    font-size: 20px;
 }
 .login-signup-query{
     display: flex;
