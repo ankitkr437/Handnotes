@@ -49,6 +49,29 @@ form{
   height: 7vh;
   width: 100%;
 }
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    rgb(11, 12, 12);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:    rgb(11, 12, 12);
+ opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:    rgb(11, 12, 12);
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:    rgb(11, 12, 12);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+ color:    rgb(11, 12, 12);
+}
+
+::placeholder { /* Most modern browsers support this now. */
+ color:    rgb(11, 12, 12);
+}
+
 .topbar-center-input {
   font-size: 18px;
   width: 100%;
