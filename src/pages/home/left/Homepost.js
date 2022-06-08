@@ -56,9 +56,7 @@ const Post = () => {
     x.notename && x.notename.toLowerCase().includes(searchedvalue &&searchedvalue.toLowerCase()) 
  );
   
-   const filterdnotes = (isnotes && issearched) && notes.filter((z)=> 
-    z.notename ===searchedvalue 
-  )
+ 
    console.log(filterdnotes)
   
   
