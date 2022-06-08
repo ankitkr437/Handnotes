@@ -52,6 +52,9 @@ const Post = () => {
   }, [user._id])
  
  
+   const filterdnotes = (isnotes && issearched) && notes.filter(coin =>
+    coin.notename && coin.notename.toLowerCase().includes(searchedvalue &&searchedvalue.toLowerCase()) 
+ );
   
    const filterdnotes = (isnotes && issearched) && notes.filter((z)=> 
     z.notename ===searchedvalue 
