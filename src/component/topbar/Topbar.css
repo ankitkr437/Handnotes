@@ -57,7 +57,7 @@ form{
  color:    rgb(11, 12, 12);
  opacity:  1;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
+::-moz-placeholder {  
  color:    rgb(11, 12, 12);
  opacity:  1;
 }
