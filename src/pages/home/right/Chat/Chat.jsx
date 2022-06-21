@@ -36,7 +36,9 @@ const Chat = () => {
 
   // because connection is making multiple times due to the multiple time reredering of this component so avoiding this we will use useEffect
   useEffect(() => {
-    socket.current = io("ws://handnotesocketserver.herokuapp.com/");
+    // https://handnotesocket.herokuapp.com/
+    socket.current = io("ws://handnotesocket.herokuapp.com");
+    // socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
       setarrivalmessage({
         sender: data.senderId,
@@ -64,7 +66,7 @@ const Chat = () => {
       setonlineusers(users);
     });
   }, [user]);
-
+  console.log("onlineuser are" ,onlineusers)
   useEffect(() => {
     const fetchallconversationspeople = async () => {
       try {
