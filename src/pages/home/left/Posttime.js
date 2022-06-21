@@ -161,7 +161,7 @@ const Posttime = ({x}) => {
             </div>
             </Link>
             <div className="post-reaction">
-                <img src="/image/icons8-view-64.png"></img>
+                <img src="/image/icons8-view-64.png" className="post-reaction-seen-img"></img>
                 <p>{x.buy.length}</p>
             </div>
           </div>

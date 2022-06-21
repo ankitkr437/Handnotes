@@ -17,8 +17,7 @@ const Profile = () => {
 
   const { userId } = useParams();
 
-  const pf = "http://localhost:8000/images/";
-
+  const pf="https://handnoteapi.herokuapp.com/images/";
   const [user, setuser] = useState({})
   const[totallikes,settotallikes] =useState(0)
   const[totalviews,settotalviews] =useState(0)
@@ -149,7 +148,7 @@ const Profile = () => {
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-top-img-container">
-                <img src={user.profilePicture ? user.profilePicture : pf + "DefaultBoy.jpg"} alt="profile picture"></img>
+                <img src={user && user.profilePicture ? user.profilePicture : pf + "DefaultPic.jpg"} alt="profile picture"></img>
                 <p className="username">
                   {user && user.username}
                 </p>

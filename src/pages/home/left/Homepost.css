@@ -162,10 +162,10 @@
 
 @media only screen and (max-width: 700px) {
     .post-container{
-        height: 63vh;
+        height: 60vh;
         padding-bottom:2vh;
         margin-bottom: 3vh;
-        width: 95%;
+        width: 97%;
     }
     .post-topbar-img{
         width: 42px;
@@ -206,16 +206,20 @@
         width: 37vw;
         height: 6vh;
     }
+    .post-reaction-seen-img{
+        height: 25px;
+        width: 25px;
+    }
     .post-topbar-edit-delete-container {
         width: 29vw;
         margin-top: 1vh;
     }
     .main-post-img-container img{
-        height:43vh;
-        width: 20vh;
+        height:40vh;
+        width: 23vh;
     }
     .main-post{
-        height: 43vh;
+        height: 40vh;
     }
     .main-post-notename{
         font-size:20px;
