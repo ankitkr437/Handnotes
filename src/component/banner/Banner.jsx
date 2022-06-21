@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Profile from "../../pages/profile/Profile";
 const Banner = () => {
-  const pf="https://handnoteapi.herokuapp.com/images/";
+  const pf="http://localhost:8000/images/";
   const [users, setusers] = useState([]);
   const [notes, setnotes] = useState([]);
   const [len, setlen] = useState(0);
@@ -53,7 +53,7 @@ const Banner = () => {
       return b.length - a.length;
     });
   }
-
+   
   return (
     <>
      {
@@ -66,8 +66,8 @@ const Banner = () => {
         autoFocus={true}
         autoPlay={true}
         infiniteLoop={true}
-        transitionTime={1500}
-        interval={3300}
+        transitionTime={2500}
+        interval={5300}
         className="carousel-container"
       >
         {showauthor.map((x, i) => {
@@ -98,7 +98,7 @@ const Banner = () => {
                       </p>
                     </Link>
                     <p className="banner-sell">
-                      Total sell of notes :<span>{x.length}</span>
+                      Total published notes :<span>{x.length}</span>
                     </p>
                   </div>
                 </div>

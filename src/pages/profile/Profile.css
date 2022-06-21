@@ -5,144 +5,189 @@
 }
 .profile-container{
     width: 100%;
-    height: 40vh;
-    padding-top: 11vh;
-    padding-left: 4vh;
-    padding-right: 4vh;
-}
-.post-topbar-ago{
-    line-height: 2vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 14vh;
 }
 .profile-top{
     display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-color: rgb(200, 217, 236);
-    box-shadow: 0px 1px 3px rgb(0, 0, 0);
-    margin-top: 2vh;
-    margin: 0 7vh;
-    margin-left: 2vh;
-    height: 19vh;
-    padding: 0 1vh;
-    width: 93vw;
 }
  
-.follow{
-    box-shadow: 0px 1px 3px rgb(86, 109, 86);
-    color:rgb(7, 35, 94);  
-    background-color: rgb(133, 158, 240);
-    margin-top: 1%;
-    outline: none;
-    display: flex;
-    width:10vw;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 500;
-}
-.follow-icon{
-    color:rgb(7, 35, 94); 
-}
-
 .profile-top-img-container {
     display: flex;
-    flex: 0.6;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-     
-    object-fit: cover;
+    flex: 2;
+    flex-direction: column; 
+    align-items: center;
 }
 .profile-top-img-container img{
-    width: 14vh;
-    height: 14vh;
+    width: 20vh;
+    height: 20vh;
     padding: 0.2vh;
+    object-fit: cover;
     border-radius: 50%;
-    border: 2px solid rgb(106, 150, 24);
+    border: 1px solid gray;
 }
-.profile-top-followers-container{
+.username{
+   font-size: 17px;
+   font-weight: 600;
+   line-height: 20px;
+}
+.profile-desc{
     display: flex;
-    flex: 1;
+    flex: 7;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    width: 100%;
+    line-height: 3px;
 }
-
-.profile-top-folloeings-container{
+.fullname{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 17px;
+}
+.institution-container{
     display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column;
 }
-.profile-top-notes-container{
+.institution-container img{
+    height: 15px;
+    width: 15px;
+}
+.institution{
+  font-size: 14px;
+  line-height: 17px;
+}
+.desc{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17px;
+}
+.user-resident{
     display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    line-height: 17px;
 }
-.number{
-    font-size: 23px;
-    font-weight: 600;
+.user-resident img{
+    height: 12px;
+    width: 12px;
 }
-.number-below{
-    font-size: 14px;
+.residing-first{
+   font-size: 12px;
+   font-weight: 300;
+}
+.residing-second{
+    font-size: 12px;
     font-weight: 300;
-    color: rgb(85, 69, 48);
 }
 
-
-
-
-.contribution{
-    border-top: 2px solid rgb(46, 8, 61);
-    line-height: 8vh;
-}
-.profile-contribution{
+.followers-followings{
     display: flex;
-    justify-content: center;
-    align-items: center; 
 }
+.followers-followings p{
+    line-height: 17px;
+     font-size: 12px;
+     margin-left: 1px;
+     margin-right: 1px;
+     color: rgb(54, 51, 51);
+}
+.follow-chat{
+    display: flex;
+    width:35%;
+}
+
+.start-conversation-1 {
+    display: flex;
+    margin-left: 1vh;
+    flex: 3;
+    justify-content: center;
+    /* padding-top: 1vh; */
+    height: 7vh;
+    border: none;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 10px 7px rgb(233, 238, 233);
+    background-color: rgb(115, 155, 247);
  
-.profile-contribution-sell-container{
+}
+.button-text{
     display: flex;
-    flex: 1;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center; 
+}
+.start-conversation-1 p{
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    margin-right: 3px;
+}
+.start-conversation-1 img{
+    width: 20px;
+    height: 20px;
+  }
+.start-conversation-1:hover{
+  cursor: pointer;
+  background-color: rgb(82, 124, 224);
 }
 
-.profile-contribution-buy-container{
+.follow{
+    box-shadow: 0px 1px 3px rgb(86, 109, 86);
+     color: white;
+     box-shadow: 0px 0px 7px 7px rgb(233, 238, 233);
+     background-color: rgb(115, 155, 247);
+    border: none;
     display: flex;
-    flex: 1;
+    width:9vw;
+    border-radius: 5vh;
+    align-items: center;
     justify-content: center;
-    align-items: center; 
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 5vh;
+}
+.follow:hover{
+    background-color: rgb(82, 124, 224);
+  }
+.follow-icon{
+    color:rgb(255, 255, 255); 
+}
+
+.contributions-pc{
+    display: flex;
+    margin-top: 2vh;
+    background-color: rgb(245, 248, 250);
+}
+.gain-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid darkcyan;
+    background-color: rgb(115, 155, 247);
+    border-radius: 5px;
+    height: 17vh;
+    width: 12vw;
+    box-shadow: 0px 0px 7px 7px rgb(233, 238, 233);
+    margin-right: 1vh;
+    box-sizing: border-box;
+    margin-top: 2vh;
+}
+.gain-container img{
+    height: 32px;
+    width: 32px;
+}
+.total-gain{
+    width: 50%;
+    color: white;
+    display: flex;
+    padding-left: 2vh;
+    padding-top: 2vh;
     flex-direction: column;
 }
-.profile-contribution-solve-container{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-.profile-contribution-ask-container{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-.contribution-number{
-    font-size: 23px;
+.gain-value{
+    font-size: 20px;
+    text-align: center;
     font-weight: 600;
 }
-.contribution-number-below{
-    font-size: 14px;
+.gain-desc{
+    font-size: 13px;
+    line-height: initial;
     font-weight: 300;
-    color: rgb(85, 69, 48);
 }
 
 .user-post{
@@ -156,113 +201,83 @@
   height: 100%;
   width: 100%;
   margin-top: 3vh;
+  padding-left: 4vw;
 }
-.user-right{
+/* .user-right{
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 3vw;
     margin-right: 1vw;
     height: 100%;
-}
-.user-desc{
-    padding: 0 4vh;
-}
-.profile-desc{
-    display: flex;
-    width: 100%;
-}
-.profile-desc-name{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
- 
-.profile-desc-publish-notes p{
-   font-size: 23px;
-   font-weight: 600;
-   text-align: center;
+} */
+.contributions-phone{
+    display: none;
 }
 
-.residing{
-    display: flex;
-}
-.residing-first{
-   font-size: 18px;
-}
-.residing-second{
-    font-size: 17px;
-    font-weight: 300;
-}
-.desc{
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-}
 @media only screen and (max-width: 768px) {
-    .follow{
-        font-size: 15px;
-        width: 23vw;
-        height: 4vh;
+    .user-post{
+        
+        flex: 1;
+      margin-right: 0vw;
     }
-    .profile-desc-1{
-        line-height: 3vh;
+    .contributions-pc{
+        display: none;
+    }
+    .contributions-phone{
+        display: flex;
+        margin-top: 2vh;
+        background-color: rgb(245, 248, 250);
+    }
+    
+    .gain-container{
+        height: 12vh;
+        width: 30vw;
+    }
+    .gain-container img{
+        height: 42px;
+        width: 42px;
+    }
+    .total-gain{
+        padding-left: 1vh;
+    }
+    .gain-desc{
+        line-height: 14px;
     }
     .profile-container{
-        padding-right: 1vh;
-        padding-left: 0vh;
+        width: 100%;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        padding-top: 14vh;
     }
     .profile-top-img-container img{
-        width: 9vh;
-        height: 9vh; 
-        object-fit: cover;
+        width: 10vh;
+        height: 10vh;
     }
-    .profile-top{
-        height: 11vh;
-        border-radius: 8px;
-        width: 91vw;
-    }    
-    .number{
-        font-size: 19px;
-        
+    .user-timeline{
+    display: block;
     }
-    .number-below{
-        font-size: 10px;
+    .profile-desc {
+    padding-left: 1vh;
     }
-    .user-desc{
-        padding: 1vh 2vh;
+    .follow-chat{
+        width: 75%;
     }
-    .profile-desc-1{
-        line-height: 4vh;
+    .follow {
+        width: 24vw;
+        height: 5vh;
+        margin-right: 1vh;
     }
-    .profile-desc-publish-notes p{
-        margin-bottom: 1vh;
-        text-align: center;
+    .start-conversation-1{
+        height: 5vh;
     }
-     
-    .follow-icon .MuiSvgIcon-root{
-        color:rgb(7, 35, 94); 
-        font-size: 1rem;
+    .user-post{   
+        flex: 100;
+      margin-right: 0vw;
     }
-    .user-right{
-        display: none;
-         
+    .user-timeline{
+      padding-left: 0vw;
     }
-    .complete-your-profile{
-        font-size: 19px;
-        font-weight: 500;
-    }
-    .desc{
-        font-size: 19px;
-        font-weight: 500;
-    }
-    .residing-first{
-        font-size: 18px;
-        font-weight: 400;
-     }
-     .residing-second{
-         font-size: 14px;
-         font-weight: 300;
-     }
+    
 }
  

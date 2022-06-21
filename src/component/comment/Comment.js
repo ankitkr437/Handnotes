@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext,useRef} from 'react';
 import './Comment.css';
 import {Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -21,7 +21,8 @@ audio.src = "/music/comment.wav";
   const [commenttext,setcommenttext] =useState();
   const [allcomment,setallcomment] =useState([]);
   const [isfetchcomment,setisfetchcomment] =useState(false);
-   
+  const takedown=useRef(); 
+
   useEffect(()=>{
     const fetchComment =async(req,res)=>{
      try{
@@ -36,16 +37,20 @@ audio.src = "/music/comment.wav";
     fetchComment();
   },[notesid])
 
-   
+  useEffect(()=>{
+    takedown.current?.scrollIntoView({behavior:"smooth"})
+  },[allcomment,notesid]) 
+
   const CommentHandler = async(e)=>{
         e.preventDefault();
         audio.play();
         try {
-           await axios.post("https://handnoteapi.herokuapp.com/api/comments/" + notesid, { 
+           const res= await axios.post("https://handnoteapi.herokuapp.com/api/comments/" + notesid, { 
                 userId:user._id,
                 text:commenttext,
              });
-            
+            setallcomment([...allcomment,res.data])
+            setcommenttext("")
           } catch (err) {}
           console.log("ajjkk")
       }
@@ -55,11 +60,12 @@ audio.src = "/music/comment.wav";
   <div className='comment-container'>
      
         <div className='comment-info-container'>
-
         {
           isfetchcomment?allcomment.map((x,i)=>{
             return(
-                <CommentBox userinfo={x.userId} text={x.text} key={i}></CommentBox>
+              <div ref={takedown}>
+                <CommentBox userinfo={x.userId} text={x.text} key={i} /> 
+                </div>
             )
           })
           :<Spinner animation="grow"  style={{width:"20vw",height:"10vw",marginTop:"30vh",color:"yellowgreen",marginLeft:"10vw"}}/>
@@ -71,6 +77,8 @@ audio.src = "/music/comment.wav";
                         type="text"
                        placeholder="Add a comment"
                        onChange={(e)=>setcommenttext(e.target.value)}
+                       value={commenttext}
+                       required
                     ></input>
                      <label for="submit-comment-form"
                       className="comment-submit-icon-form"> 

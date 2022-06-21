@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useParams } from "react-router-dom";
 import axios from 'axios'
-import { PDFObject } from 'react-pdfobject'
 import './Note.css';
 import {Spinner} from 'react-bootstrap';
  
@@ -25,10 +24,10 @@ const Note = () => {
           }
         }
         fetchnoteone();
-    },[])
+    },[notesid])
     
-    var url = pfpdf+"notepdfs/";
-    var html_src = 'data:text/html;charset=utf-8,' + url;
+    // var url = pfpdf+"notepdfs/";
+    
     return (
         <>
         {
@@ -63,7 +62,7 @@ const Note = () => {
 
             
            <div className='notefile-note-image-container'>
-           <img src={noteone.thumbnailfilename?noteone.thumbnailfilename:pfpdf+"images-notes.jpg"} className="notefile-note-thumbnail-image"></img>
+           <img src={noteone.thumbnailfilename?noteone.thumbnailfilename:pfpdf+"images-notes.jpg"} className="notefile-note-thumbnail-image" alt='thumbnailfilename.jpg'></img>
            </div>
          </div>
 
@@ -71,7 +70,7 @@ const Note = () => {
          <div className='notefile-note-pdf'>
         {
            noteone.notefilename?
-           <iframe src={noteone.notefilename&&noteone.notefilename} className='notefile-iframe' >
+           <iframe src={noteone.notefilename&&noteone.notefilename} className='notefile-iframe' title='myframe'>
           </iframe>
            :
            <p style={{textAlign:"center"}}>Not Available</p>

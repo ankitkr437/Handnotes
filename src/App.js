@@ -11,6 +11,8 @@ import Note from './pages/notes/Note';
 import Update from "./component/update/Update";
 import Comment from '../src/component/comment/Comment';
 import UpdatePost from "./component/updatepost/UpdatePost";
+import Chat from "./pages/home/right/Chat/Chat.jsx";
+import HomepageMessage from "./pages/home/right/HomepageMessageBox/HomepageMessage";
 import { AuthContext } from "./context/AuthContext";
  
 function App() {
@@ -22,6 +24,9 @@ function App() {
      <Route path="/"  exact element={user?<Home />:<SignUp />} />
      <Route path="/login"  element={user?<Navigate to="/" />:<Login />} />
      <Route path="/register"  element={user?<Navigate to="/" />:<SignUp />} />
+     <Route path="/message" element={<Chat />} />
+     <Route path="/message/:currentchatId" element={<Chat />} />
+     <Route path="/messageauthor" element={<HomepageMessage />} />
      <Route path="/profile/:userId"   element={<Profile />} />
      <Route path="/notes/:notesid"   element={<Note />} />
      <Route path="/cart/:notesid"   element={<Cart />} />

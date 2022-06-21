@@ -89,7 +89,6 @@ const Sell = () => {
             Upload a Note
           </p>
         </div>
- 
         <div className="sell-form-container" ref={ShowForm}>
         <img src="https://img.icons8.com/ios-filled/50/000000/delete-sign--v2.png"
          className="sell-form-cut-icon"
@@ -99,16 +98,18 @@ const Sell = () => {
           <form onSubmit={SellFormSubmitHandler} className="sell-form">
             <input
               type="text"
-              placeholder="Notename"
+              placeholder="Notename(not more that 25 character)"
               className="sell-form-note-name"
               ref={notename}
+              maxLength="25"
               required
             ></input>
             <input
               type="text"
-              placeholder="Descritpion(not more than 10 words)"
+              placeholder="Descritpion(not more than 400 character)"
               className="sell-form-descritpion"
               ref={descritpion}
+              maxLength="400"
               required
             ></input>
             {/* <input
@@ -126,6 +127,7 @@ const Sell = () => {
               id="pdf-file-upload"
               onChange={(e)=>setfileurl(e.target.value)}
               placeholder="Url of note(file must be in pdf format)"
+              required
             ></input>
             <label for="thumbnail-file-upload" class="custom-file-upload">
              Thumbnail for notes

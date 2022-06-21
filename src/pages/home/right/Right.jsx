@@ -1,10 +1,10 @@
 import React from 'react'
-import './Right.css';
+import HomepageMessage from './HomepageMessageBox/HomepageMessage.jsx'
 const Right = () => {
     return (
         <>
-         <div className='right-container'>
-             Right
+         <div className='right-box'>
+            <HomepageMessage />
          </div>   
         </>
     )

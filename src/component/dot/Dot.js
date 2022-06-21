@@ -23,7 +23,7 @@ const Dot = ({x}) => {
   const DeleteNotes= async()=>{
     audio.play();
         try {
-         await axios.delete(`https://handnoteapi.herokuapp.com/api/notes/${x._id}`,{userId:currentuser._id});
+         await axios.delete(`http://localhost:8000/api/notes/${x._id}`,{userId:currentuser._id});
          alert("notes deleted successfully")
          window.location.reload();
         } catch (err) {

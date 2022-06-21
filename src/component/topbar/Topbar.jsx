@@ -61,6 +61,9 @@ const Topbar = () => {
           <Link to='/' style={{ textDecoration: "none" }}>
             <p className="topbar-title">HandNotes</p>
           </Link>
+          <Link to={`/`} style={{ textDecoration: "none",width:"50%",justifyContent:"center"}} className="topbar-right-Img-left-link">
+            <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultPic.png"} className="topbar-right-Img-left" onClick={MenuClickHandler}  />
+          </Link>
         </div>
         <div className="topbar-center">
         <form className="search-form" onSubmit={searchsubmit}>
@@ -82,10 +85,12 @@ const Topbar = () => {
         </form>
         </div>
         <div className="topbar-right">
-           
-          <Link to={`/`} style={{ textDecoration: "none" }}>
+        <Link to={`/message`} style={{ textDecoration: "none",width:"50%",display:"flex",justifyContent:"end"}}>
+        <img src="https://img.icons8.com/color/48/undefined/facebook-messenger--v1.png" className="messenger-icon"/>
+        </Link>
+        {/* <Link to={`/`} style={{ textDecoration: "none",width:"50%" ,display:"flex",justifyContent:"center"}} className="topbar-right-img-link">
             <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultPic.png"} className="topbar-right-Img" onClick={MenuClickHandler}  />
-          </Link>
+          </Link> */}
         </div>
       </div>
 
@@ -118,7 +123,7 @@ const Topbar = () => {
        </div>
         <hr />
        <Link to={`/profile/update`} style={{textDecoration:"none"}} className="profile-update-menu" onClick={MenuClickHandler}>
-          <p className="profile-update-link-tag">Complete Your Profile</p>
+          <p className="profile-update-link-tag">Setting</p>
           <img src="https://img.icons8.com/ios/30/000000/settings--v2.png" className="topbar-setting"/>
             </Link>
         <div className="profile-update-menu" id="topbar-logout" onClick={logouthandler}>

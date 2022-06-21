@@ -8,12 +8,25 @@
     padding-top: 12vh;
     display: flex;
     height: 100vh;
-    padding: 2vh 2vw;
-    position: relative;
+    padding: 2vh 0vw;
 }
 .comment-info-container{
-    padding: 9vh 2vw;
+    overflow-y: scroll;
+    padding: 9vh 4vw;
 }
+.comment-info-container::-webkit-scrollbar {
+    width: 7px;               /* width of the entire scrollbar */
+  }
+  
+  .comment-info-container::-webkit-scrollbar-track {
+    background: white;       /* color of the tracking area */
+  }
+  
+  .comment-info-container::-webkit-scrollbar-thumb {
+    background-color: rgb(78, 78, 220);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(0, 8, 255);  /* creates padding around scroll thumb */
+  }
 .comment-form{
     display: flex;
     /* since there is a 2 vw padding ffrom left right */

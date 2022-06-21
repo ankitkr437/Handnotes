@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react'
 import './SignUp.css';
 import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+ 
 import { RegisterCall } from '../../apiCalls.js';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -17,13 +17,13 @@ const SignUp = () => {
     const password = useRef();
     const confirmpassword = useRef();
     
-    const { user, isFetching, error, dispatch } = useContext(AuthContext);
+    const {   isFetching, dispatch } = useContext(AuthContext);
     const submithandler = (e) => {
         
         alert("Sit back and relax");
         audio.play();
         e.preventDefault();
-        password.current.value == confirmpassword.current.value ?
+        password.current.value === confirmpassword.current.value ?
             RegisterCall({
                 username: username.current.value,
                 email: email.current.value,
@@ -41,7 +41,7 @@ const SignUp = () => {
                 <p className='logo-1-signup'>
                     HandNotes
                 </p>
-                <p className='logo-3-signup'>A website where you can buy or sell your notes</p>
+                <p className='logo-3-signup'>A website where you can upload and get notes</p>
             </div>
 
             <div className='signup-container'>

@@ -8,7 +8,7 @@
     box-sizing: border-box;
     z-index: 10;
     /* background-color: #c2cfe8; */
-    background-color: white;
+    background-color: rgb(115, 155, 247);
     position: fixed;
     margin-top: 3h;
     transform: all 1s ease .2s;
@@ -38,6 +38,7 @@
     border-radius: 10px;
     border: 1px solid darkgray;
     padding: 1px 2vh;
+     
 }
  
 #thumbnail-file-upload{
@@ -50,7 +51,7 @@
 }
  
 .custom-file-upload{
-   color:darkslategray;
+   color: white;
    font-size: 18px;
    height: 10%;
     margin: 2% 0;
@@ -68,13 +69,13 @@
 }
 .sellform-submit-button{
     width: 83%;
-    background-color: white;
+    background-color: rgb(73, 122, 237);
     height: 7vh;
     border-radius: 13px;
+    color: white;
     font-size: 21px;
     border: 1px solid gray;
-    box-shadow: 0px 0px 6px lightgray;
-    
+    box-shadow: 0px 0px 10px 7px rgb(94, 147, 234);
 }
 @media only screen and (max-width: 768px) {
     .sell-form-container{
@@ -89,7 +90,7 @@
      }
      #pdf-file-upload{
          height: 5vh;
-         font-size: 15px;
+         font-size: 13px;
      }
      .custom-file-upload{
         font-size: 16px;
@@ -100,7 +101,7 @@
      }
      .sell-form input {
         height: 6vh;
-        font-size: 15px;
+        font-size: 13px;
      }
      .sell-form{
          height: 84%;

@@ -1,10 +1,11 @@
 import React from 'react'
 import Topbar from '../../component/topbar/Topbar';
-import Banner from '../../component/banner/Banner';
+import Author from '../../component/Author/Author.jsx';
 import Right from './right/Right';
 import Homepost from './left/Homepost.js';
 import Footer from '../../component/footer/Footer';
 import Profile from '../profile/Profile';
+import Homeprofile from './leftmost/Homeprofile.jsx';
 import './Home.css';
 
 import SellHome from '../../component/sellhome/SellHome'
@@ -20,10 +21,15 @@ const Home = () => {
 
     return (
         <>
+        <div className='home-top'>
         <SellHome/>
-           <p className='trending-author' style={{marginBottom:"0"}}>Trending Authors</p>
-           <Banner />
+        <p className="featured-authors-text">Featured authors</p>
+        <Author />
+        </div>
            <div className='main'>
+          <div className='leftmost-container'>
+          <Homeprofile />
+           </div> 
            <div className='left-container'>
           <Homepost />
            </div> 
