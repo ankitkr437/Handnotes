@@ -152,7 +152,7 @@ const Posttime = ({x}) => {
                { islike?
                <img src="/image/icons8-liked-post.png"  onClick={likehandler} />: <img src="/image/icons8-like-post.png"  onClick={likehandler} />  
                }
-                <p style={{marginTop:"8px"}}>{like}</p>
+                <p>{like}</p>
             </div>
             <Link to={`/viewcomment/${x._id}`} className="link-in-comment">
             <div className="post-reaction">

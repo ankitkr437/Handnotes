@@ -162,33 +162,80 @@
 
 @media only screen and (max-width: 700px) {
     .post-container{
-        height: 67vh;
+        height: 63vh;
         padding-bottom:2vh;
         margin-bottom: 3vh;
-        width: 100%;
+        width: 95%;
+    }
+    .post-topbar-img{
+        width: 42px;
+        height: 42px;
+    }
+    .post-topbar-name{
+        font-size: 15px;
+        font-weight: 700;
+        color: rgb(8, 43, 43);
+    }
+    .post-topbar-desc{
+        margin-left: 1vh;
     }
     .post-topbar{
         height: 9vh;
     }
-    .main-post-img-container img{
-        height:47vh;
-        width: 20vh;
+    .post-topbar-follow-ago-container p{
+        font-size: 10px;
+        line-height: 0px;
     }
-    .main-post{
-        height: 48vh;
+ 
+     .post-topbar-delete-icon{
+        height: 24px;
+        width: 24px;
     }
-    .View-pdf-1 img{
-        height: 20px;
-        width: 20px;  
-     }
-      
+    .post-topbar-edit-icon img{
+        height: 24px;
+        width: 24px;
+    }
+    .post-reaction img {
+        height: 22px;
+        width: 22px;
+    }
+    .post-reaction p{
+        font-size: 20px;
+    }
     .post-reaction{
         width: 37vw;
         height: 6vh;
     }
     .post-topbar-edit-delete-container {
-        width: 59vw;
+        width: 29vw;
         margin-top: 1vh;
     }
+    .main-post-img-container img{
+        height:43vh;
+        width: 20vh;
+    }
+    .main-post{
+        height: 43vh;
+    }
+    .main-post-notename{
+        font-size:20px;
+    }
+    .main-post-description{
+        font-size: 15px;
+    }
+    .main-post-desc{
+        font-size: 11px;
+    }
+    .View-pdf-1{
+        width: 105px;
+   height: 7vh;
+    }
+    .View-pdf-1 img{
+        height: 18px;
+        width: 18px;  
+     }
+     .View-pdf-1 p{
+        font-size: 14px;
+      }
   }
 

@@ -46,25 +46,26 @@
 
 @media only screen and (max-width: 768px) {
     .sell-img-home img{
-       width: 6vh;
-       height: 6vh;
+       width: 5vh;
+       height: 5vh;
      }
      .sell-container-home{
         height: 6vh;
         margin-bottom: 0vh;
         padding-bottom: 8vh;
+        width: 97%;
     }
     .sell-post-home{
         display: flex;
         justify-content: center;
-        padding: 1.6vh 0vw;
+        padding: 0.8vh 0vw;
         flex: 4;
-        height: 6vh;
+        height: 5vh;
         margin-right: 0vw;
     }
     .sell-post-home p{
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 15px;
+        font-weight: 500;
     }
     .sellform-submit-button {
         font-size: 17px;

@@ -62,7 +62,7 @@ const Topbar = () => {
             <p className="topbar-title">HandNotes</p>
           </Link>
           <Link to={`/`} style={{ textDecoration: "none",width:"50%",justifyContent:"center"}} className="topbar-right-Img-left-link">
-            <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultPic.png"} className="topbar-right-Img-left" onClick={MenuClickHandler}  />
+            <img src={(user && user.profilePicture)?user.profilePicture:pf+"DefaultPic.png"} className="topbar-right-Img-left" onClick={MenuClickHandler}  />
           </Link>
         </div>
         <div className="topbar-center">
@@ -85,9 +85,11 @@ const Topbar = () => {
         </form>
         </div>
         <div className="topbar-right">
+         { user &&
         <Link to={`/message`} style={{ textDecoration: "none",width:"50%",display:"flex",justifyContent:"end"}}>
         <img src="https://img.icons8.com/color/48/undefined/facebook-messenger--v1.png" className="messenger-icon"/>
         </Link>
+          }
         {/* <Link to={`/`} style={{ textDecoration: "none",width:"50%" ,display:"flex",justifyContent:"center"}} className="topbar-right-img-link">
             <img src={(user && user.profilePicture)?user.profilePicture:pf +"DefaultPic.png"} className="topbar-right-Img" onClick={MenuClickHandler}  />
           </Link> */}

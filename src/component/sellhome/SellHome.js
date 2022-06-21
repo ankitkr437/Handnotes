@@ -98,18 +98,18 @@ const Sell = () => {
           <form onSubmit={SellFormSubmitHandler} className="sell-form">
             <input
               type="text"
-              placeholder="Notename(not more that 25 character)"
+              placeholder="Notename(not more that 15 character)"
               className="sell-form-note-name"
               ref={notename}
-              maxLength="25"
+              maxLength="15"
               required
             ></input>
             <input
               type="text"
-              placeholder="Descritpion(not more than 400 character)"
+              placeholder="Descritpion(not more than 250 character)"
               className="sell-form-descritpion"
               ref={descritpion}
-              maxLength="400"
+              maxLength="250"
               required
             ></input>
             {/* <input

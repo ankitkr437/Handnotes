@@ -161,7 +161,7 @@ form{
   width: 40vw;
   z-index: 10;
   position: fixed;
-  background-color: rgb(105, 171, 247);
+  background-color: rgb(116, 154, 242);
   padding: 30px 15px;
   animation-name: menushow;
   animation-duration: 0.4s;
@@ -353,7 +353,7 @@ color: darkblue;
   z-index: 10;
   height: 50vh;
   position: fixed;
-  background-color: rgb(34, 191, 253);
+  background-color: rgb(116, 154, 242);
   padding: 30px 15px;
   animation-name: menushowsmall;
   animation-duration: 0.4s;
