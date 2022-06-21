@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { format } from 'timeago.js';
-import './ProfilePost.css'
+import './Profilepost.css'
 import { AuthContext } from "../../../context/AuthContext";
 const Posttime = ({ x,currentprofileuser}) => {
 
