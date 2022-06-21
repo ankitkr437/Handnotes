@@ -162,10 +162,10 @@
 
 @media only screen and (max-width: 700px) {
     .post-container{
-        height: 60vh;
+        height: 59vh;
         padding-bottom:2vh;
         margin-bottom: 3vh;
-        width: 97%;
+        width: 99%;
     }
     .post-topbar-img{
         width: 42px;
@@ -196,8 +196,8 @@
         width: 24px;
     }
     .post-reaction img {
-        height: 22px;
-        width: 22px;
+        height: 24px;
+        width: 24px;
     }
     .post-reaction p{
         font-size: 20px;
