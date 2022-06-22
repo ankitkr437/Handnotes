@@ -195,12 +195,12 @@
         width: 24px;
     }
     .post-reaction img {
-        height: 20px;
-        width: 20px;
+        height: 21px;
+        width: 21px;
         /* margin-top: 1.5vh; */
     }
     .post-reaction p{
-        font-size: 14px;
+        font-size: 15px;
     }
     .post-reaction{
         width: 37vw;
