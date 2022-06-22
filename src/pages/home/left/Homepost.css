@@ -161,7 +161,7 @@
 
 @media only screen and (max-width: 700px) {
     .post-container{
-        height: 59vh;
+        height: 56vh;
         padding-bottom:2vh;
         margin-bottom: 3vh;
         width: 97%;
@@ -195,16 +195,16 @@
         width: 24px;
     }
     .post-reaction img {
-        height: 24px;
-        width: 24px;
-        margin-top: 1.5vh;
+        height: 20px;
+        width: 20px;
+        /* margin-top: 1.5vh; */
     }
     .post-reaction p{
-        font-size: 20px;
+        font-size: 14px;
     }
     .post-reaction{
         width: 37vw;
-        height: 6vh;
+        height: 5vh;
     }
     .post-reaction-seen-img{
         height: 28px;
@@ -215,7 +215,7 @@
         margin-top: 1vh;
     }
     .main-post-img-container img{
-        height:40vh;
+        height:39vh;
         width: 23vh;
     }
     .main-post{
