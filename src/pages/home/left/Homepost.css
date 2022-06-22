@@ -16,7 +16,6 @@
     height: 13vh;
     padding: 1vh 1vh;
     display: flex;
-    border-top-left-radius: 15px;
     border-top-right-radius: 15px;
    background-color: rgb(116, 154, 242);
 }

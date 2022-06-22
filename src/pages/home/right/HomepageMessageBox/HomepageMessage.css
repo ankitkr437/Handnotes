@@ -5,7 +5,7 @@
      margin: 0;
 }
 .messagebox-1-topbar{
-    border-radius: 20px;
+    border-top-right-radius: 20px;
     padding: 4vh 2vw;
     background-color: rgb(116, 154, 242);
 }
