@@ -148,7 +148,7 @@ const Profile = () => {
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-top-img-container">
-                <img src={user && user.profilePicture ? user.profilePicture : pf + "DefaultPic.jpg"} alt="profile picture"></img>
+                <img src={user && user.profilePicture ? user.profilePicture : pf + "DefaultPic.png"} alt="profile picture"></img>
                 <p className="username">
                   {user && user.username}
                 </p>

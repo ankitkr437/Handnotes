@@ -35,7 +35,18 @@
          width: 100vw;
          height: 80vh;
         flex: 10;
+        padding: 1vh 1vh;
         transition: 0.5s;
+    }
+    .messagebox-1-topbar-title{
+        font-size: 19px;
+    }
+    .messagebox-1-topbar-form-input {
+        height: 6vh;
+        width: 78vw;
+    }
+    .messagebox-1-topbar{
+        padding: 2vh 2vw;
     }
     .chat-1-inbox{
         flex: 1;

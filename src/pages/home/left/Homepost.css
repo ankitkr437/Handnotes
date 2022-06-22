@@ -198,6 +198,7 @@
     .post-reaction img {
         height: 24px;
         width: 24px;
+        margin-top: 1.5vh;
     }
     .post-reaction p{
         font-size: 20px;
@@ -207,11 +208,11 @@
         height: 6vh;
     }
     .post-reaction-seen-img{
-        height: 25px;
-        width: 25px;
+        height: 28px;
+        width: 28px;
     }
     .post-topbar-edit-delete-container {
-        width: 29vw;
+        width: 37vw;
         margin-top: 1vh;
     }
     .main-post-img-container img{

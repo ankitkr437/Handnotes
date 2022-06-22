@@ -80,12 +80,11 @@
 @media only screen and (max-width: 768px) {
     .sell-form-container{
         height:51vh;
-        width: 80vw;
+        width: 90vw;
     }
-    #thumbnail-file-upload{
-         
+    #thumbnail-file-upload{ 
         font-size: 12px;
-        width: 91%;
+        width: 95%;
         margin-top: -1vh;
      }
      #pdf-file-upload{
