@@ -126,7 +126,13 @@ const Chat = () => {
   };
 
  const toggle=()=>{
-  pastConversation.current.style.display="none";
+  if(pastConversation.current.style.display==="none")
+  {
+    pastConversation.current.style.display="flex";
+  }
+  else{
+    pastConversation.current.style.display="none";
+  }
   allchat.current.style.display="flex";
   conversationtitle.current.style.display="none";
  }

@@ -34,3 +34,9 @@
     height: 55vh;
     overflow-y: scroll;
 }
+
+@media only screen and (max-width: 768px) {
+    .messagebox-1-allmessage{
+        height: 70vh;
+    }
+}
