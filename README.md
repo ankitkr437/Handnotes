@@ -2,7 +2,7 @@
 # This website is live(better to open in pc)
 https://handnote.netlify.app/
 
-### Note sharing website integradted with real time chat .
+### Note sharing website integrated with real time chat .
 ##### one can upload own notes,see all other available notes and can search for a particular note. can like ,follow,unfollow,comment on any post ,can communicate with any user.
 
 ### Want to run the project on your local machine:-
